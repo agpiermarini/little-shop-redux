@@ -59,5 +59,4 @@ RSpec.describe Merchant do
       expect(Merchant.all.size).to eq(1)
     end
   end
-
 end
