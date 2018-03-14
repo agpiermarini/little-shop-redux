@@ -8,18 +8,30 @@ RSpec.describe Merchant do
   end
 
   describe 'Add to Merchant database' do
-    before(:all) do
+    it 'can create merchant' do
       Merchant.create!(name: "One")
       Merchant.create!(name: "Turing")
-    end
 
-    it 'can create merchant' do
       expect(Merchant.find(1)).to be_an_instance_of(Merchant)
     end
 
     it 'merchant has a name' do
+      Merchant.create!(name: "One")
+      Merchant.create!(name: "Turing")
+
       expect(Merchant.find(1).name).to eq("One")
       expect(Merchant.find(2).name).to eq("Turing")
+    end
+  end
+
+  describe 'Class Methods' do
+    describe '.all' do
+      it 'retrieves all merchants' do
+        Merchant.create!(name: "One")
+        Merchant.create!(name: "Turing")
+
+        expect(Merchant.all.size).to eq(2)
+      end
     end
   end
 end

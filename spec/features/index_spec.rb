@@ -14,9 +14,15 @@ describe 'Sinatra App' do
     expect(last_response).to be_ok
   end
 
-  it "should display welcome message" do
+  it 'should display welcome message' do
     get '/'
 
-    expect(last_response.body).to include("Welcome!")
+    expect(last_response.body).to include('Welcome!')
+  end
+
+  it 'should have merchant index' do
+    get '/merchants'
+
+    expect(last_response.body).to include('Merchants')
   end
 end
