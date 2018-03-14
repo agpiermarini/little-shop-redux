@@ -4,8 +4,8 @@ RSpec.describe Merchant do
       merchant1 = Merchant.new
       merchant2 = Merchant.new(name: 'Turing')
 
-      expect(merchant_1).to_not be_valid
-      expect(merchant_2).to be_valid
+      expect(merchant1).to_not be_valid
+      expect(merchant2).to be_valid
     end
   end
 
