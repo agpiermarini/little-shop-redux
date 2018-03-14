@@ -1,11 +1,11 @@
 RSpec.describe Merchant do
   describe 'Validation' do
     it 'should be invalid to not have a name' do
-      merchant1 = Merchant.new
-      merchant2 = Merchant.new(name: 'Turing')
+      merchant_1 = Merchant.new
+      merchant_2 = Merchant.new(name: 'Turing')
 
-      expect(merchant1).to_not be_valid
-      expect(merchant2).to be_valid
+      expect(merchant_1).to_not be_valid
+      expect(merchant_2).to be_valid
     end
   end
 
