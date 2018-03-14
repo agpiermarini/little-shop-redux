@@ -7,6 +7,7 @@ gem 'sinatra-activerecord'
 
 group :development, :test do
   gem 'shotgun'
+  gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-core'
   gem 'tux'
@@ -14,4 +15,3 @@ group :development, :test do
   gem 'launchy'
   gem 'rack-test'
 end
-
