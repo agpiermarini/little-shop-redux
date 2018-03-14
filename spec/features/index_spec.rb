@@ -10,19 +10,4 @@ RSpec.describe 'User' do
       end
     end
   end
-
-  describe 'visits /merchants' do
-    it 'sees merchant header' do
-      visit '/merchants'
-
-      expect(page).to have_title 'Merchants'
-    end
-
-    it 'sees a table of all merchants' do
-      visit '/merchants'
-
-      expect(page).to have_css 'table'
-    end
-  end
-
 end

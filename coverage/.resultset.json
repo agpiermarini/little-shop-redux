@@ -35,7 +35,11 @@
         null,
         null,
         1,
-        2,
+        1,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -73,6 +77,19 @@
         null,
         null,
         null,
+        null
+      ],
+      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
         null,
         1,
         1,
@@ -83,8 +100,15 @@
         null,
         1,
         1,
+        0,
         null,
-        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -155,6 +179,6 @@
         null
       ]
     },
-    "timestamp": 1521055872
+    "timestamp": 1521070767
   }
 }

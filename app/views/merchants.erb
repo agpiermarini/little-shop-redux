@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Merchants</title>
   </head>
   <body>
+    <nav>
+      <a class='plain link' href='/'>LittleShop</a>
+      <a class='plain link' href='/merchants'>Merchants</a>
+      <a class='plain link' href='/items'>Items</a>
+      <a class='plain link' href='/invoices'>Invoices</a>
+    </nav>
+    <div class='dashboard'>
+      <a href='/merchant/dashboard'>dashboard</a>
+      <h1>Merchants</h1>
+        <form method="get" action="/merchants/new">
+          <button type="submit">Create a New Merchant</button>
+        </form>
+    </div>
 
-    <!-- <h1>Merchants</h1> -->
-    <table>
-      <% all_merchants.each do |merchant| %>
-        <tr><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></tr>
-      <% end %>
-    </table>
+
+  <main>
+    <% all_merchants.each do |merchant| %>
+      <div class='merchant_row'>
+        <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+        <form method="get" action="/merchants/:id/edit">
+          <button type="submit">Edit</button>
+        </form>
+        <form method="get" action="/merchants/:id/delete">
+          <button class='delete' type='button' name='delete merchant'>Delete</button>
+        </form>
+      </div>
+    <% end %>
+  </main>
+
+
   </body>
 </html>
