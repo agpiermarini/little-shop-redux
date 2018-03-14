@@ -1,28 +1,26 @@
 require './app/controllers/little_shop_app'
 
+RSpec.describe 'User' do
+  describe 'visits /' do
+    it 'sees the homepage' do
+      visit '/'
 
-describe 'Sinatra App' do
-  # include Rack::Test::Methods
-
-  def app
-    LittleShopApp.new
-  end
-
-  it 'should allow accessing the home page' do
-    get '/'
-
-    expect(last_response).to be_ok
-  end
-
-  it 'should display welcome message' do
-    get '/'
-
-    expect(last_response.body).to include('Welcome!')
-  end
-
-  it 'should have merchant index' do
-    get '/merchants'
-
-    expect(last_response.body).to include('Merchants')
+      within('h1') do
+        expect(page).to have_content('Welcome!')
+      end
+    end
   end
 end
+
+#   it 'should display welcome message' do
+#     get '/'
+#
+#     expect(last_response.body).to include('Welcome!')
+#   end
+#
+#   it 'should have merchant index' do
+#     get '/merchants'
+#
+#     expect(last_response.body).to include('Merchants')
+#   end
+# end
