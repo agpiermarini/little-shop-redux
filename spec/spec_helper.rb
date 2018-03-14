@@ -33,3 +33,15 @@ module RSpecMixin
   include Rack::Test::Methods
   def app() Sinatra::Application end
 end
+
+DatabaseCleaner.strategy = :truncation
+
+RSpec.configure do |c|
+  c.before(:all) do
+    DatabaseCleaner.clean
+  end
+
+  c.after(:all) do
+    DatabaseCleaner.clean
+  end
+end
