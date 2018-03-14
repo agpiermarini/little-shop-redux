@@ -10,17 +10,19 @@ RSpec.describe 'User' do
       end
     end
   end
-end
 
-#   it 'should display welcome message' do
-#     get '/'
-#
-#     expect(last_response.body).to include('Welcome!')
-#   end
-#
-#   it 'should have merchant index' do
-#     get '/merchants'
-#
-#     expect(last_response.body).to include('Merchants')
-#   end
-# end
+  describe 'visits /merchants' do
+    it 'sees merchant header' do
+      visit '/merchants'
+
+      expect(page).to have_title 'Merchants'
+    end
+
+    it 'sees a table of all merchants' do
+      visit '/merchants'
+
+      expect(page).to have_css 'table'
+    end
+  end
+
+end

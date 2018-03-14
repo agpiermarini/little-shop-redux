@@ -5,6 +5,12 @@
     <title>Merchants</title>
   </head>
   <body>
-    
+
+    <!-- <h1>Merchants</h1> -->
+    <table>
+      <% all_merchants.each do |merchant| %>
+        <tr><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></tr>
+      <% end %>
+    </table>
   </body>
 </html>
