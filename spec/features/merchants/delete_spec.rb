@@ -4,11 +4,13 @@ require './app/controllers/little_shop_app'
 RSpec.describe 'User' do
   describe 'clicks delete merchant button' do
     it 'sees new merchant index without that merchant' do
-      Merchant.create(name: 'Skechers')
+      Merchant.create(name: 'Skechers', id: 7)
       visit '/merchants'
-      click_button 'Delete'
-require 'pry'; binding.pry
       expect(page).to have_content 'Skechers'
+
+      click_button 'Delete'
+      expect(current_path).to eq('/merchants')
+      expect(page).to_not have_content 'Skechers'
     end
   end
 

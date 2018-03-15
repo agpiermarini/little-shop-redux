@@ -1,5 +1,6 @@
 class LittleShopApp < Sinatra::Base
   set :root, File.expand_path('..', __dir__)
+  set :method_override, true
 
   get '/' do
     erb :index
@@ -29,9 +30,23 @@ class LittleShopApp < Sinatra::Base
         }
   end
 
+  get '/merchants/:id' do
+    erb :'merchants/show',
+        :locals => {
+          :merchant => Merchant.find(params[:id])
+        }
+  end
+
   post '/merchants/:id' do
     Merchant.find(params[:id]).update(params[:merchant])
 
     redirect '/merchants'
   end
+
+  delete '/merchants/:id' do
+    Merchant.destroy(params[:id])
+
+    redirect '/merchants'
+  end
+
 end
