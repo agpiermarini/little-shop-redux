@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/config/environment.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/config/environment.rb": [
         1,
         1,
         null,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/app/controllers/little_shop_app.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/app/controllers/little_shop_app.rb": [
         1,
         1,
         1,
@@ -36,14 +36,14 @@
         null,
         null,
         1,
-        29,
+        26,
         null,
         null,
         null,
         null,
         null,
         1,
-        7,
+        6,
         null,
         null,
         1,
@@ -80,12 +80,12 @@
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/app/models/merchant.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/app/models/merchant.rb": [
         1,
         1,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/config/database.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/config/database.rb": [
         null,
         1,
         1,
@@ -96,27 +96,12 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/index_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
         null,
         null,
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants/delete_spec.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/merchants/delete_spec.rb": [
         1,
         null,
         null,
@@ -154,7 +139,7 @@
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants/edit_spec.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/merchants/edit_spec.rb": [
         1,
         null,
         1,
@@ -189,7 +174,66 @@
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants/index_spec.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/merchants/merchants_new_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/merchants/user_creates_new_merchant_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/merchants/user_visits_merchants_page_spec.rb": [
         1,
         null,
         1,
@@ -242,6 +286,7 @@
         1,
         1,
         null,
+        1,
         1,
         null,
         null,
@@ -277,73 +322,7 @@
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants/merchants_new_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants/new_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/features/merchants_spec.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/merchants_spec.rb": [
         1,
         null,
         1,
@@ -386,7 +365,20 @@
         null,
         null
       ],
-      "/Users/meganarellano/turing/2module/week1/little-shop-redux/spec/models/merchant_spec.rb": [
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/features/user_visits_homepage_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/haleymesander/Desktop/turing/2module/little-shop-redux/spec/models/merchant_spec.rb": [
         1,
         1,
         1,
@@ -451,6 +443,6 @@
         null
       ]
     },
-    "timestamp": 1521088575
+    "timestamp": 1521139812
   }
 }

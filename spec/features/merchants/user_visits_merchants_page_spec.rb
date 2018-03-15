@@ -1,16 +1,16 @@
 require './app/controllers/little_shop_app'
 
-RSpec.describe 'User' do
-  describe 'visits /merchants' do
-    it 'sees merchant title' do
+describe 'user visits merchants list page' do
+  context 'they visit /merchants' do
+    it 'they see a merchant header' do
       visit '/merchants'
 
-      expect(page).to have_title 'Merchants'
+      expect(page).to have_content 'Merchants'
     end
   end
 
-  describe 'clicks on little shop link' do
-    it 'is redirected to index path' do
+  context 'they click on little shop link' do
+    it 'they are redirected to /' do
       visit '/merchants'
       click_link 'LittleShop'
 
@@ -18,8 +18,8 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on merchants link' do
-    it 'is redirected to merchants path' do
+  context 'they click on merchants link' do
+    it 'they are redirected to /merchants' do
       visit '/merchants'
       click_link 'Merchants'
 
@@ -27,8 +27,8 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on items link' do
-    it 'is redirected to items path' do
+  context 'they click on items link' do
+    it 'they are redirected to /items' do
       visit '/merchants'
       click_link 'Items'
 
@@ -36,8 +36,8 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on invoices link' do
-    it 'is redirected to invoices path' do
+  context 'they click on invoices link' do
+    it 'they are redirected to /invoices' do
       visit '/merchants'
       click_link 'Invoices'
 
@@ -45,17 +45,18 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on create merchant button' do
-    it 'is redirected to new merchant path' do
+  context 'they click on create merchant button' do
+    it 'they are redirected to /merchants/new' do
       visit '/merchants'
       click_button 'Create a New Merchant'
 
+      expect(page).to have_content 'Create New Merchant'
       current_path.should == '/merchants/new'
     end
   end
 
-  describe 'clicks on individual merchant link' do
-    it 'is redirected to individual merchant path' do
+  context 'they click on individual merchant link' do
+    it 'they are redirected to individual merchant path' do
       Merchant.create(name: 'Youuuuuu', id: 34)
       visit '/merchants'
       click_link 'Youuuuuu'
@@ -64,8 +65,8 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on edit merchant button' do
-    it 'is redirected to edit merchant path' do
+  context 'they click on edit merchant button' do
+    it 'they are redirected to /merchant/:id/edit' do
       Merchant.create(name: 'Meeeeeee', id: 3)
       visit '/merchants'
       click_button 'Edit'
@@ -74,8 +75,8 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on delete merchant button' do
-    it 'is redirected to delete merchant path' do
+  context 'they click on delete merchant button' do
+    it 'they are redirected to /merchants' do
       Merchant.create(name: 'Youuuuuu', id: 34)
       visit '/merchants'
       click_button 'Delete'
