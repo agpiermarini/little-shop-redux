@@ -48,7 +48,7 @@ describe 'user visits merchants list page' do
   context 'they click on create merchant button' do
     it 'they are redirected to /merchants/new' do
       visit '/merchants'
-      click_button 'Create a New Merchant'
+      click_link 'Create a New Merchant'
 
       expect(page).to have_content 'Create New Merchant'
       current_path.should == '/merchants/new'
@@ -69,7 +69,7 @@ describe 'user visits merchants list page' do
     it 'they are redirected to /merchant/:id/edit' do
       Merchant.create(name: 'Meeeeeee', id: 3)
       visit '/merchants'
-      click_button 'Edit'
+      click_link 'Edit'
 
       current_path.should == '/merchants/3/edit'
     end

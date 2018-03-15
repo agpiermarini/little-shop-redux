@@ -13,9 +13,7 @@
     </nav>
     <header>
       <h1><%= merchant.name %></h1>
-      <form method="get" action="/merchants/<%= merchant.id %>/edit">
-        <button class="edit_merchant" type="submit">Edit</button>
-      </form>
+        <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</button>
       <form method="delete" action="/merchants/<%= merchant.id %>">
         <button class="delete_merchant" type="submit" >Delete</button>
       </form>
