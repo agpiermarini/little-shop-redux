@@ -20,19 +20,24 @@
     </div>
 
 
-  <main>
+  <table>
     <% all_merchants.each do |merchant| %>
-      <div class='merchant_row'>
-        <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-        <form method="get" action="/merchants/<%= merchant.id %>/edit">
-          <button class='edit_merchant' type="submit">Edit</button>
-        </form>
-        <form method="get" action="/merchants/<%= merchant.id %>/delete">
-          <button class='delete_merchant' type='submit' >Delete</button>
-        </form>
-      </div>
-    <% end %>
-  </main>
+      <!-- <tbody> -->
+        <tr>
+          <td>
+            <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+            <form method="get" action="/merchants/<%= merchant.id %>/edit">
+              <button class='edit_merchant' type="submit">Edit</button>
+            </form>
+            <form method="get" action="/merchants/<%= merchant.id %>/delete">
+              <button class='delete_merchant' type='submit' >Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% end %>
+    <!-- </tbody> -->
+  </table>
+
 
 
   </body>
