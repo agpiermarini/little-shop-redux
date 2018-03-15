@@ -9,8 +9,8 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on buttons of /merchants' do
-    it 'clicks the create merchant buttton' do
+  describe 'clicks on create merchant button' do
+    it 'is redirected to new merchant path' do
       visit '/merchants'
       click_button('Create a New Merchant')
 
@@ -18,9 +18,18 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on buttons of /merchants' do
+  describe 'clicks on individual merchant link' do
+    it 'is redirected to individual merchant path' do
+      Merchant.create(name: "Youuuuuu", id: 34)
+      visit '/merchants'
+      click_link('Youuuuuu')
 
-    it 'clicks the edit merchant buttton' do
+      current_path.should == '/merchants/34'
+    end
+  end
+
+  describe 'clicks on edit merchant button' do
+    it 'is redirected to edit merchant path' do
       Merchant.create(name: "Meeeeeee", id: 3)
         visit '/merchants'
         click_button('Edit')
@@ -29,13 +38,13 @@ RSpec.describe 'User' do
     end
   end
 
-  describe 'clicks on buttons of /merchants' do
-    it 'clicks the edit merchant buttton' do
+  describe 'clicks on delete merchant button' do
+    it 'is redirected to delete merchant path' do
       Merchant.create(name: "Youuuuuu", id: 34)
-        visit '/merchants'
-        click_button('Delete')
+      visit '/merchants'
+      click_button('Delete')
 
-        current_path.should == '/merchants/34/delete'
+      current_path.should == '/merchants/34/delete'
     end
   end
 end

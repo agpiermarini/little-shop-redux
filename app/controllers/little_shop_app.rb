@@ -10,6 +10,5 @@ class LittleShopApp < Sinatra::Base
         :locals => {
           :all_merchants => Merchant.all
         }
-
   end
 end
