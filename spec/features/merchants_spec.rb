@@ -11,23 +11,31 @@ RSpec.describe 'User' do
 
   describe 'clicks on buttons of /merchants' do
     it 'clicks the create merchant buttton' do
+      visit '/merchants'
       click_button('Create a New Merchant')
 
       current_path.should == '/merchants/new'
     end
+  end
+
+  describe 'clicks on buttons of /merchants' do
 
     it 'clicks the edit merchant buttton' do
-      within('div') do
+      Merchant.create(name: "Meeeeeee", id: 3)
+        visit '/merchants'
         click_button('Edit')
 
-        current_path.should == '/merchants/:id/edit'
-      end
+        current_path.should == '/merchants/3/edit'
     end
+  end
 
-    # it 'clicks the edit merchant buttton' do
-    #   click_button('edit merchant')
-    #
-    #   current_path.should == '/merchants/:id/edit'
-    # end
+  describe 'clicks on buttons of /merchants' do
+    it 'clicks the edit merchant buttton' do
+      Merchant.create(name: "Youuuuuu", id: 34)
+        visit '/merchants'
+        click_button('Delete')
+
+        current_path.should == '/merchants/34/delete'
+    end
   end
 end

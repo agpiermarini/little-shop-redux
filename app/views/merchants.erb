@@ -24,11 +24,11 @@
     <% all_merchants.each do |merchant| %>
       <div class='merchant_row'>
         <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-        <form method="get" action="/merchants/:id/edit">
-          <button type="submit">Edit</button>
+        <form method="get" action="/merchants/<%= merchant.id %>/edit">
+          <button class='edit_merchant' type="submit">Edit</button>
         </form>
-        <form method="get" action="/merchants/:id/delete">
-          <button class='delete' type='button' name='delete merchant'>Delete</button>
+        <form method="get" action="/merchants/<%= merchant.id %>/delete">
+          <button class='delete_merchant' type='submit' >Delete</button>
         </form>
       </div>
     <% end %>
