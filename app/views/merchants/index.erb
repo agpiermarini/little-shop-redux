@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Merchants</title>
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
     <nav>
@@ -12,11 +13,9 @@
       <a class="plain link" href="/invoices">Invoices</a>
     </nav>
     <header>
-      <a href="/merchant/dashboard">dashboard</a>
+      <a class="dashboard" href="/merchant/dashboard">Dashboard</a>
       <h1>Merchants</h1>
-        <form method="get" action="/merchants/new">
-          <button type="submit">Create a New Merchant</button>
-        </form>
+          <a class="create-button" href="/merchants/new">Create a New Merchant</button>
     </header>
 
 
@@ -26,9 +25,7 @@
         <tr>
           <td>
             <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-            <form method="get" action="/merchants/<%= merchant.id %>/edit">
-              <button class="edit_merchant" type="submit">Edit</button>
-            </form>
+              <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</button>
             <form method="post" action="/merchants/<%= merchant.id %>">
               <input type="hidden" name="_method" value="delete">
               <button class="delete_merchant" type="submit" value="delete">Delete</button>

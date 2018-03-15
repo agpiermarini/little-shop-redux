@@ -15,7 +15,7 @@ describe 'user visits create new merchant page' do
   context 'they cancel new merchant creation' do
     it 'they return to merchants' do
       visit '/merchants/new'
-      click_button 'Cancel'
+      click_link 'Cancel'
 
       expect(current_path).to eq('/merchants')
     end
