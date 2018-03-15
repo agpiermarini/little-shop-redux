@@ -76,12 +76,14 @@ describe 'user visits merchants list page' do
   end
 
   context 'they click on delete merchant button' do
-    it 'they are redirected to /merchants' do
-      Merchant.create(name: 'Youuuuuu', id: 34)
+    it 'they delete a merchant' do
+      Merchant.create(name: 'Skechers', id: 7)
       visit '/merchants'
-      click_button 'Delete'
+      expect(page).to have_content 'Skechers'
 
-      current_path.should == '/merchants'
+      click_button 'Delete'
+      expect(current_path).to eq('/merchants')
+      expect(page).to_not have_content 'Skechers'
     end
   end
 end
