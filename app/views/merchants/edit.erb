@@ -15,7 +15,7 @@
     <h1>Edit <%= merchant.name %></h1>
   </header>
   <section class="form-box">
-    <form class='edit-merchant' action='/merchants' method='post'>
+    <form class='edit-merchant' action='/merchants/<%= merchant.id %>' method='post'>
       <p class='input-label'>Name</p>
       <input id='Name' type='text' name='merchant[name]'>
       <input type='submit' value='Update Merchant'>
