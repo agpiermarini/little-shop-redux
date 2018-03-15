@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Create New Merchant</title>
   </head>
   <body>
@@ -15,8 +15,15 @@
       <h1>Create New Merchant</h1>
     </header>
 
-    <form method="post" action="/merchants/new">
-      <button type="submit">Create a New Merchant</button>
-    </form>
+    <section>
+      <form class='new-merchant' action='/merchants' method='post'>
+        <p class='input-label'>Name</p>
+        <input id='Name' type='text' name='merchant[name]'>
+        <input type='submit' value='Create Merchant'>
+      </form>
+      <form class='cancel' action='/merchants' method='get'>
+        <button type='submit'>Cancel</button>
+      </form>
+    </section>
   </body>
 </html>
