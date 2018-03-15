@@ -80,7 +80,7 @@ RSpec.describe 'User' do
       visit '/merchants'
       click_button 'Delete'
 
-      current_path.should == '/merchants/34/delete'
+      current_path.should == '/merchants'
     end
   end
 end

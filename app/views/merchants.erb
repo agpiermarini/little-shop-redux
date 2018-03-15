@@ -29,7 +29,7 @@
             <form method='get' action='/merchants/<%= merchant.id %>/edit'>
               <button class='edit_merchant' type='submit'>Edit</button>
             </form>
-            <form method='get' action='/merchants/<%= merchant.id %>/delete'>
+            <form method='delete' action='/merchants/<%= merchant.id %>'>
               <button class='delete_merchant' type='submit' >Delete</button>
             </form>
           </td>
@@ -37,5 +37,8 @@
       <% end %>
     </tbody>
   </table>
+
+
+
   </body>
 </html>
