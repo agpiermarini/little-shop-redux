@@ -5,8 +5,8 @@ RSpec.describe 'User' do
     it 'sees the homepage' do
       visit '/'
 
-      within('h1') do
-        expect(page).to have_content('Welcome!')
+      within 'h1' do
+        expect(page).to have_content 'Welcome!'
       end
     end
   end
