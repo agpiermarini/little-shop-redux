@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <title>Merchants</title>
   </head>
   <body>
     <nav>
-      <a class='plain link' href='/'>LittleShop</a>
-      <a class='plain link' href='/merchants'>Merchants</a>
-      <a class='plain link' href='/items'>Items</a>
-      <a class='plain link' href='/invoices'>Invoices</a>
+      <a class="plain link" href="/">LittleShop</a>
+      <a class="plain link" href="/merchants">Merchants</a>
+      <a class="plain link" href="/items">Items</a>
+      <a class="plain link" href="/invoices">Invoices</a>
     </nav>
     <header>
-      <a href='/merchant/dashboard'>dashboard</a>
+      <a href="/merchant/dashboard">dashboard</a>
       <h1>Merchants</h1>
-        <form method='get' action='/merchants/new'>
-          <button type='submit'>Create a New Merchant</button>
+        <form method="get" action="/merchants/new">
+          <button type="submit">Create a New Merchant</button>
         </form>
     </header>
 
@@ -25,18 +25,18 @@
       <!-- <tbody> -->
         <tr>
           <td>
-            <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-            <form method='get' action='/merchants/<%= merchant.id %>/edit'>
-              <button class='edit_merchant' type='submit'>Edit</button>
+            <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+            <form method="get" action="/merchants/<%= merchant.id %>/edit">
+              <button class="edit_merchant" type="submit">Edit</button>
             </form>
-            <form method='post' action='/merchants/<%= merchant.id %>'>
-              <input type='hidden' name='_method' value='delete'>
-              <button class='delete_merchant' type='submit' value='delete'>Delete</button>
+            <form method="post" action="/merchants/<%= merchant.id %>">
+              <input type="hidden" name="_method" value="delete">
+              <button class="delete_merchant" type="submit" value="delete">Delete</button>
             </form>
           </td>
         </tr>
       <% end %>
-    <!-- </tbody> -->
+    </tbody>
   </table>
 
 

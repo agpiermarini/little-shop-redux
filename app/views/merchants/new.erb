@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <title>Create New Merchant</title>
   </head>
   <body>
     <nav>
-      <a class='plain link' href='/'>LittleShop</a>
-      <a class='plain link' href='/merchants'>Merchants</a>
-      <a class='plain link' href='/items'>Items</a>
-      <a class='plain link' href='/invoices'>Invoices</a>
+      <a class="plain link" href="/">LittleShop</a>
+      <a class="plain link" href="/merchants">Merchants</a>
+      <a class="plain link" href="/items">Items</a>
+      <a class="plain link" href="/invoices">Invoices</a>
     </nav>
     <header>
       <h1>Create New Merchant</h1>
     </header>
 
-    <section class='form-box'>
-      <form class='new-merchant' action='/merchants' method='post'>
-        <p class='input-label'>Name</p>
-        <input id='Name' type='text' name='merchant[name]'>
-        <input type='submit' value='Create Merchant'>
+    <section class="form-box">
+      <form class="new-merchant" action="/merchants" method="post">
+        <p class="input-label">Name</p>
+        <input id="Name" type="text" name="merchant[name]">
+        <input type="submit" value="Create Merchant">
       </form>
-      <form class='cancel' action='/merchants' method='get'>
-        <button type='submit'>Cancel</button>
+      <form class="cancel" action="/merchants" method="get">
+        <button type="submit">Cancel</button>
       </form>
     </section>
   </body>
