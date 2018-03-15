@@ -14,31 +14,28 @@
     <div class='dashboard'>
       <a href='/merchant/dashboard'>dashboard</a>
       <h1>Merchants</h1>
-        <form method="get" action="/merchants/new">
-          <button type="submit">Create a New Merchant</button>
+        <form method='get' action='/merchants/new'>
+          <button type='submit'>Create a New Merchant</button>
         </form>
     </div>
 
 
   <table>
     <% all_merchants.each do |merchant| %>
-      <!-- <tbody> -->
+      <tbody>
         <tr>
           <td>
             <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-            <form method="get" action="/merchants/<%= merchant.id %>/edit">
-              <button class='edit_merchant' type="submit">Edit</button>
+            <form method='get' action='/merchants/<%= merchant.id %>/edit'>
+              <button class='edit_merchant' type='submit'>Edit</button>
             </form>
-            <form method="get" action="/merchants/<%= merchant.id %>/delete">
+            <form method='get' action='/merchants/<%= merchant.id %>/delete'>
               <button class='delete_merchant' type='submit' >Delete</button>
             </form>
           </td>
         </tr>
       <% end %>
-    <!-- </tbody> -->
+    </tbody>
   </table>
-
-
-
   </body>
 </html>

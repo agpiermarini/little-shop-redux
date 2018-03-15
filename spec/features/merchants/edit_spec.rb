@@ -3,7 +3,7 @@ require './app/controllers/little_shop_app'
 RSpec.describe 'User' do
   describe 'clicks merchant edit button' do
     it 'sees merchant details in page header' do
-      Merchant.create(name: "Ussss", id: 12123)
+      Merchant.create(name: 'Ussss', id: 12123)
       visit '/merchants'
       click_button 'Edit'
 
@@ -12,7 +12,7 @@ RSpec.describe 'User' do
     end
 
     it 'can edit merchant' do
-      Merchant.create(name: "Ussss", id: 12123)
+      Merchant.create(name: 'Ussss', id: 12123)
       visit '/merchants'
       click_button 'Edit'
       fill_in 'Name', :with => 'Youuu'
