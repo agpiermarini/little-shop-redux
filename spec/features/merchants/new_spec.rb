@@ -8,7 +8,6 @@ RSpec.describe 'User' do
 
       expect(page).to have_content 'Create New Merchant'
     end
-  end
 
     it 'can create new merchant' do
       visit '/merchants'
@@ -16,17 +15,16 @@ RSpec.describe 'User' do
       fill_in 'Name', :with => 'Toms'
       click_button 'Create Merchant'
 
-      current_path.should == '/merchants'
+      expect(current_path).to eq('/merchants')
       expect(page).to have_content 'Toms'
     end
 
+    it 'can cancel' do
+      visit '/merchants'
+      click_button 'Create a New Merchant'
+      click_button 'Cancel'
 
-  # describe 'clicks on little shop link' do
-  #   it 'is redirected to index path' do
-  #     visit '/merchants'
-  #     click_link('LittleShop')
-  #
-  #     current_path.should == '/'
-  #   end
-  # end
+      expect(current_path).to eq('/merchants')
+    end
+  end
 end

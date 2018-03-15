@@ -11,18 +11,18 @@
       <a class='plain link' href='/items'>Items</a>
       <a class='plain link' href='/invoices'>Invoices</a>
     </nav>
-    <header>
+    <div class='dashboard'>
       <a href='/merchant/dashboard'>dashboard</a>
       <h1>Merchants</h1>
         <form method='get' action='/merchants/new'>
           <button type='submit'>Create a New Merchant</button>
         </form>
-    </header>
+    </div>
 
 
   <table>
     <% all_merchants.each do |merchant| %>
-      <!-- <tbody> -->
+      <tbody>
         <tr>
           <td>
             <a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
@@ -35,10 +35,7 @@
           </td>
         </tr>
       <% end %>
-    <!-- </tbody> -->
+    </tbody>
   </table>
-
-
-
   </body>
 </html>
