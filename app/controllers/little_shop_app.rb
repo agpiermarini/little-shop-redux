@@ -6,6 +6,10 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    erb :merchants
+    erb :merchants,
+        :locals => {
+          :all_merchants => Merchant.all
+        }
+
   end
 end
