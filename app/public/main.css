@@ -1,55 +1,111 @@
+body {
+  font-style: Arial
+}
+
 nav {
-  width: 100%;
+  width: 820px;
   display: inline-block;
-  font-size: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  font-size: 17px;
+  padding: 5px 20px;
   border-style: solid;
-  border-color: medium;
 }
 
-a.little_shop:link {
+.little-shop {
   text-decoration: none;
-  color: black;
+  float: left;
+  color: black
 }
 
-a.right_links:visited {
-  color: black;
-}
-
-.little_shop {
-  float: left
-}
-
-.right_links {
+.right-links {
+  text-decoration: none;
   float: right;
   padding-left: 30px;
-  font-size: 20px;
+  font-size: 17px;
+  color: black;
 }
 
 header {
   display: inline-block;
-  width: 100%;
-  background-color: #ddddd;
-  padding-left: 20px;
-  padding-top: 15px;
-  padding-bottom: 20px;
+  width: 820px;
+  background-color: #A9A9A9;
+  padding: 10px 20px;
   border-style: solid;
-  font-size: 20px;
 }
 
 h1 {
+  padding-left: 335px;
+  padding-bottom: 5px;
+  margin: 0px 0px;
+}
+
+.dashboard {
+  margin-top: 0px;
+  font-size: 17px;
+  float: left
+}
+
+.create-button {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 5px;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  display: block;
+  width: 200px;
+  height: 20px;
+  padding: 3px 3px;
   text-align: center;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  font-size: 17px;
 }
 
-a.dashboard {
-  margin-top: 30px;
+table {
+  border-collapse: separate;
+  border-spacing: 5px;
+  margin: 20px 70px;
 }
 
-.create_button {
-  text_align: center;
+td {
+  vertical-align: middle;
+  border-style: solid;
+  display: inline;
+}
+
+tr {
+  line-height: 16px;
+}
+
+table tr:nth-child(even) td{
+  background-color: #A9A9A9;
+}
+
+a.merchant-name {
+  display: inline-block;
+  width: 580px;
+  padding: 0px 10px;
+}
+
+form.edit-button {
+  display: inline-block;
+  margin-top: 0px
+}
+
+form.delete-button {
+  display: inline-block;
+}
+
+button.edit-button {
+  background-color: #ffe066;
+  width: 50px;
+  border-style: solid;
+  border-color: black;
+  box-shadow: 2px 2px;
+  margin-bottom: 3px
+}
+
+button.delete-button {
+  background-color: #ff9999;
+  width: 50px;
+  border: 1px solid #000000;
+  box-shadow: 2px 2px;
 }

@@ -6,38 +6,37 @@
     <title>Merchants</title>
     <link rel="stylesheet" href="/main.css">
   </head>
+
   <body>
     <nav>
-      <a class="little_shop" href="/">LittleShop</a>
-      <a class="right_links" href="/merchants">Merchants</a>
-      <a class="right_links" href="/items">Items</a>
-      <a class="right_links" href="/invoices">Invoices</a>
+      <a class="little-shop" href="/">LittleShop</a>
+      <a class="right-links" href="/invoices">Invoices</a>
+      <a class="right-links" href="/items">Items</a>
+      <a class="right-links" href="/merchants">Merchants</a>
     </nav>
+
     <header>
       <a class="dashboard" href="/merchant/dashboard">Dashboard</a>
       <h1>Merchants</h1>
-          <a class="create-button" href="/merchants/new">Create a New Merchant</button>
+      <a class="create-button" href="/merchants/new">Create a New Merchant</a>
     </header>
 
-
-  <table>
-    <% all_merchants.each do |merchant| %>
-      <!-- <tbody> -->
-        <tr>
-          <td>
-            <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-              <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</button>
-            <form method="post" action="/merchants/<%= merchant.id %>">
-              <input type="hidden" name="_method" value="delete">
-              <button class="delete_merchant" type="submit" value="delete">Delete</button>
-            </form>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
+    <table>
+      <% all_merchants.each do |merchant| %>
+          <tr>
+            <td>
+              <a class="merchant-name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+              <form class="edit-button"  method="get" action="/merchants/<%= merchant.id %>/edit">
+                <button class="edit-button" type="submit">Edit</button>
+              </form>
+              <form class="delete-button" method="post" action="/merchants/<%= merchant.id %>">
+                <input type="hidden" name="_method" value="delete">
+                <button class="delete-button" type="submit" value="delete">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+    </table>
 
   </body>
 </html>
