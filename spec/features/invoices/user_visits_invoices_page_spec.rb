@@ -13,7 +13,7 @@ describe 'user visits invoices list page' do
       visit '/invoices'
       click_link '10000'
 
-      current_path.should == '/invoices/1'
+      expect(current_path).to eq '/invoices/1'
     end
   end
 
@@ -23,7 +23,7 @@ describe 'user visits invoices list page' do
       visit '/invoices'
       click_button 'Edit'
 
-      current_path.should == '/invoices/1/edit'
+      expect(current_path).to eq '/invoices/1/edit'
     end
   end
 
@@ -34,7 +34,7 @@ describe 'user visits invoices list page' do
       expect(page).to have_content '1'
 
       click_button 'Delete'
-      expect(current_path).to eq('/invoices')
+      expect(current_path).to eq '/invoices' 
       expect(page).to_not have_content '1'
     end
   end
