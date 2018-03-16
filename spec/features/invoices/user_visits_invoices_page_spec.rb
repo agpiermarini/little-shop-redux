@@ -11,7 +11,7 @@ describe 'user visits invoices list page' do
   context 'they click on individual invoice link' do
     it 'they are redirected to individual invoice path' do
       invoice = Invoice.create(merchant_id: 100, status: 'shipping')
-      merchant = Merchant.create(id: 100, name: "Y")
+      Merchant.create(id: 100, name: "Y")
       visit '/invoices'
       click_link "#{invoice[:id]}"
 
