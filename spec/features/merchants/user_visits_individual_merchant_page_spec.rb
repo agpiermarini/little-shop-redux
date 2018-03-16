@@ -1,8 +1,8 @@
 describe 'user visits individual merchant page' do
   context 'they click on delete merchant button' do
     it 'they delete a merchant' do
-      Merchant.create(name: 'Skechers', id: 7)
-      visit '/merchants/7'
+      merchant = Merchant.create(name: 'Skechers')
+      visit "/merchants/#{merchant.id}"
       expect(page).to have_content 'Skechers'
 
       click_button 'Delete'

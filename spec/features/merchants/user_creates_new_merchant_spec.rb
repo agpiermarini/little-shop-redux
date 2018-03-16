@@ -1,5 +1,3 @@
-require './app/controllers/little_shop_app'
-
 describe 'user visits create new merchant page' do
   context 'they complete and submit new merchant form' do
     it 'they create new merchant' do
@@ -9,6 +7,27 @@ describe 'user visits create new merchant page' do
 
       expect(current_path).to eq('/merchants')
       expect(page).to have_content 'Toms'
+    end
+  end
+
+  context 'they do not fill in a name' do
+    it 'they recieve a flash error' do
+      Merchant.create(name: 'Ussss')
+      visit '/merchants/new'
+      click_button 'Create Merchant'
+
+      expect(current_path).to eq('flash error!!!!??')
+    end
+  end
+
+  context 'they try to submit a blank space as a name' do
+    it 'they recieve a flash error' do
+      Merchant.create(name: 'Ussss')
+      visit "/merchants/new"
+      fill_in 'Name', :with => ' '
+      click_button 'Create Merchant'
+
+      expect(current_path).to eq('flash error!!!!??')
     end
   end
 
