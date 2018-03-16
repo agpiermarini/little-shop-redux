@@ -1,7 +1,8 @@
 describe 'user visits individual invoice page' do
   it 'they see merchant_id' do
-    Invoice.create(merchant_id: 10000, status: 'pending')
-    visit 'invoices/7'
-    expect(page).to have_content 10000
+    invoice = Invoice.create(merchant_id: 100, status: 'pending')
+    visit 'invoices/<%= invoice.id %>'
+    expect(page).to have_content "Invoice: <%= invoice.id %> - <%= invoice.status %>"
+
   end
 end
