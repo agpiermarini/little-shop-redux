@@ -39,7 +39,7 @@ class LittleShopApp < Sinatra::Base
 
   post '/merchants/:id' do
     Merchant.update(params[:id], params[:merchant])
-    
+
     redirect '/merchants'
   end
 
@@ -49,4 +49,30 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
+  get '/invoices' do
+    erb :'invoices/index',
+        :locals => {
+          :all_invoices => Invoice.all
+        }
+  end
+
+  get '/invoices/:id/edit' do
+    erb :'invoices/edit',
+        :locals => {
+          :invoice => Invoice.find(params[:id])
+        }
+  end
+
+  get '/invoices/:id' do
+    erb :'invoices/show',
+        :locals => {
+          :invoice => Invoice.find(params[:id])
+        }
+  end
+
+  delete '/invoices/:id' do
+    Invoice.destroy(params[:id])
+
+    redirect '/invoices'
+  end
 end

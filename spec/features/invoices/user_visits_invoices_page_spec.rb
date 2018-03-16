@@ -1,3 +1,4 @@
+
 describe 'user visits invoices list page' do
   context 'they visit /invoices' do
     it 'they see a invoices header' do
@@ -11,9 +12,9 @@ describe 'user visits invoices list page' do
     it 'they are redirected to individual invoice path' do
       invoice = Invoice.create(merchant_id: 100, status: 'shipping')
       visit '/invoices'
-      click_link '<%= invoice.id %>'
+      click_link "#{invoice[:id]}"
 
-      expect(current_path).to eq '/invoices/<%= invoice.id %>'
+      expect(current_path).to eq "/invoices/#{invoice[:id]}"
     end
   end
 
@@ -21,9 +22,9 @@ describe 'user visits invoices list page' do
     it 'they are redirected to /invoice/:id/edit' do
       invoice = Invoice.create(merchant_id: 1, status: 'shipping')
       visit '/invoices'
-      click_button 'Edit'
+      click_link 'Edit'
 
-      expect(current_path).to eq '/invoices/<%= invoice.id %>/edit'
+      expect(current_path).to eq "/invoices/#{invoice[:id]}/edit"
     end
   end
 
@@ -31,7 +32,7 @@ describe 'user visits invoices list page' do
     it 'they delete an invoice' do
       invoice = Invoice.create(merchant_id: 1, status: 'shipping')
       visit '/invoices'
-      expect(page).to have_content '<%= invoice.id %>'
+      expect(page).to have_content "#{invoice[:id]}"
 
       click_button 'Delete'
       expect(current_path).to eq '/invoices'
