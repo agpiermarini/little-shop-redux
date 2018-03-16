@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Merchant</title>
+  </head>
+  <body>
+  <nav>
+    <a class="plain link" href="/">LittleShop</a>
+    <a class="plain link" href="/merchants">Merchants</a>
+    <a class="plain link" href="/items">Items</a>
+    <a class="plain link" href="/invoices">Invoices</a>
+  </nav>
+  <header>
+    <h1>Edit <%= merchant.name %></h1>
+  </header>
+  <section class="form-box">
+    <form class="edit-merchant" action="/merchants/<%= merchant.id %>" method="post">
+      <p class="input-label">Name</p>
+      <input id="Name" type="text" name="merchant[name]">
+      <input type="submit" value="Update Merchant">
+    </form>
+      <a class="cancel-button" href="/merchants">Cancel</a>
+  </section>
+</body>
+</html>

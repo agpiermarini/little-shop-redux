@@ -1,25 +1,11 @@
 RSpec.describe Merchant do
   describe 'Validation' do
-    it 'is invalid to not have a name' do
-      merchant = Merchant.new()
+    it 'should be invalid to not have a name' do
+      merchant_1 = Merchant.new
+      merchant_2 = Merchant.new(name: 'Turing')
 
-      expect(merchant).to_not be_valid
-    end
-  end
-
-  describe 'Add to Merchant database' do
-    before(:all) do
-      Merchant.create!(name: "One")
-      Merchant.create!(name: "Turing")
-    end
-
-    it 'can create merchant' do
-      expect(Merchant.find(1)).to be_an_instance_of(Merchant)
-    end
-
-    it 'merchant has a name' do
-      expect(Merchant.find(1).name).to eq("One")
-      expect(Merchant.find(2).name).to eq("Turing")
+      expect(merchant_1).to_not be_valid
+      expect(merchant_2).to be_valid
     end
   end
 end
