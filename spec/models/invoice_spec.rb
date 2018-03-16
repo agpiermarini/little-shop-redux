@@ -6,9 +6,9 @@ describe 'Validation' do
     invoice4 = Invoice.new(merchant_id: 1, status: 'pending')
 
 
-    expect(invoice_1).to_not be_valid
-    expect(invoice_2).to_not be_valid
-    expect(invoice_3).to_not be_valid
-    expect(invoice_4).to be_valid
+    expect(invoice1).to_not be_valid
+    expect(invoice2).to_not be_valid
+    expect(invoice3).to_not be_valid
+    expect(invoice4).to be_valid
   end
 end

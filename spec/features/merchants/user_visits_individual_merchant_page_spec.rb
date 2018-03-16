@@ -1,10 +1,8 @@
-require './app/controllers/little_shop_app'
-
 describe 'user visits individual merchant page' do
   context 'they click on delete merchant button' do
     it 'they delete a merchant' do
-      Merchant.create(name: 'Skechers', id: 7)
-      visit '/merchants/7'
+      merchant = Merchant.create(name: 'Skechers')
+      visit "/merchants/#{merchant.id}"
       expect(page).to have_content 'Skechers'
 
       click_button 'Delete'
@@ -17,9 +15,9 @@ describe 'user visits individual merchant page' do
     it 'they are redirected to /merchant/:id/edit' do
       Merchant.create(name: 'Meeeeeee', id: 3)
       visit '/merchants/3'
-      click_button 'Edit'
+      click_link 'Edit'
 
-      current_path.should == '/merchants/3/edit'
+      expect(current_path).to eq '/merchants/3/edit'
     end
   end
 end
