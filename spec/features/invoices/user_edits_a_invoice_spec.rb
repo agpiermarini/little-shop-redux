@@ -1,7 +1,7 @@
 describe 'user visits edit invoice page' do
   it 'they see header with invoice number and status' do
-    invoice = Invoice.create(merchant_id: 123, status: "pending")
-    merchant1 = Merchant.create(id: 123, Name: "Boaty McBoatface")
+    invoice = Invoice.create(merchant_id: 123, status: 'pending')
+    merchant1 = Merchant.create(id: 123, Name: 'Boaty McBoatface')
     visit "invoices/#{invoice.id}/edit"
 
     expect(page).to have_content "Invoice: #{invoice.id} - #{invoice.status}"
