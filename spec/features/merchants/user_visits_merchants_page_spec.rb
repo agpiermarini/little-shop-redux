@@ -1,5 +1,3 @@
-require './app/controllers/little_shop_app'
-
 describe 'user visits merchants list page' do
   context 'they visit /merchants' do
     it 'they see a merchant header' do
@@ -14,7 +12,7 @@ describe 'user visits merchants list page' do
       visit '/merchants'
       click_link 'LittleShop'
 
-      current_path.should == '/'
+      expect(current_path).to eq('/')
     end
   end
 
@@ -23,7 +21,7 @@ describe 'user visits merchants list page' do
       visit '/merchants'
       click_link 'Merchants'
 
-      current_path.should == '/merchants'
+      expect(current_path).to eq('/merchants')
     end
   end
 
@@ -32,7 +30,7 @@ describe 'user visits merchants list page' do
       visit '/merchants'
       click_link 'Items'
 
-      current_path.should == '/items'
+      expect(current_path).to eq('/items')
     end
   end
 
@@ -41,43 +39,43 @@ describe 'user visits merchants list page' do
       visit '/merchants'
       click_link 'Invoices'
 
-      current_path.should == '/invoices'
+      expect(current_path).to eq('/invoices')
     end
   end
 
-  context 'they click on create merchant button' do
+  context 'they click on create merchant link' do
     it 'they are redirected to /merchants/new' do
       visit '/merchants'
       click_link 'Create a New Merchant'
 
       expect(page).to have_content 'Create New Merchant'
-      current_path.should == '/merchants/new'
+      expect(current_path).to eq('/merchants/new')
     end
   end
 
   context 'they click on individual merchant link' do
     it 'they are redirected to individual merchant path' do
-      Merchant.create(name: 'Youuuuuu', id: 34)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit '/merchants'
       click_link 'Youuuuuu'
 
-      current_path.should == '/merchants/34'
+      expect(current_path).to eq("/merchants/#{merchant.id}")
     end
   end
 
-  context 'they click on edit merchant button' do
+  context 'they click on edit merchant link' do
     it 'they are redirected to /merchant/:id/edit' do
-      Merchant.create(name: 'Meeeeeee', id: 3)
+      merchant = Merchant.create(name: 'Meeeeeee')
       visit '/merchants'
       click_link 'Edit'
 
-      current_path.should == '/merchants/3/edit'
+      expect(current_path).to eq("/merchants/#{merchant.id}/edit")
     end
   end
 
   context 'they click on delete merchant button' do
     it 'they delete a merchant' do
-      Merchant.create(name: 'Skechers', id: 7)
+      Merchant.create(name: 'Skechers')
       visit '/merchants'
       expect(page).to have_content 'Skechers'
 

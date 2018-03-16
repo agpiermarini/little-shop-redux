@@ -4,18 +4,18 @@ nav {
   font-size: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  border-style: solid;
-  border-color: medium;
   padding-top: 5px;
   padding-bottom: 5px;
+  border-style: solid;
+  border-color: medium;
 }
 
-a:link {
+a.little_shop:link {
   text-decoration: none;
   color: black;
 }
 
-a:visited {
+a.right_links:visited {
   color: black;
 }
 
@@ -27,4 +27,29 @@ a:visited {
   float: right;
   padding-left: 30px;
   font-size: 20px;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+  background-color: #ddddd;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-style: solid;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+a.dashboard {
+  margin-top: 30px;
+}
+
+.create_button {
+  text_align: center;
 }
