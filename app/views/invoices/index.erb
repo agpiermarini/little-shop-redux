@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/main.css">
-    <title>Merchants</title>
+    <title>Invoices</title>
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
@@ -14,22 +14,21 @@
       <a class="right_links" href="/invoices">Invoices</a>
     </nav>
     <header>
-      <a class="dashboard" href="/merchant/dashboard">Dashboard</a>
-      <h1>Merchants</h1>
-          <a class="create-button" href="/merchants/new">Create a New Merchant</a>
+      <a class="dashboard" href="/invoice/dashboard">Dashboard</a>
+      <h1>Invoices</h1>
     </header>
 
 
   <table>
-    <% all_merchants.each do |merchant| %>
-      <!-- <tbody> -->
+    <tbody>
+    <% all_invoices.each do |invoice| %>
         <tr>
           <td>
-            <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-              <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a>
-            <form method="post" action="/merchants/<%= merchant.id %>">
+            <a href="/invoices/<%= invoice.id %>"><%= invoice.id %></a>
+              <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</a>
+            <form method="post" action="/invoices/<%= invoice.id %>">
               <input type="hidden" name="_method" value="delete">
-              <button class="delete_merchant" type="submit" value="delete">Delete</a>
+              <button class="delete_invoice" type="submit" value="delete">Delete</a>
             </form>
           </td>
         </tr>
