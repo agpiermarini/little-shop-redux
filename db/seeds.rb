@@ -22,25 +22,6 @@ CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |r
               updated_at:  row[:updated_at])
 end
 
-<<<<<<< HEAD
-# CSV.foreach('./data/invoices.csv', headers: true, header_converters: :symbol) do |row|
-#   Invoice.create!(id:          row[:id],
-#                   merchant_id: row[:merchant_id],
-#                   status:      row[:status],
-#                   created_at:  row[:created_at],
-#                   updated_at:  row[:updated_at])
-# end
-#
-# CSV.foreach('./data/invoice_items.csv', headers: true, header_converters: :symbol) do |row|
-#   InvoiceItem.create!(id:        row[:id],
-#                      item_id:    row[:item_id],
-#                      invoice_id: row[:invoice_id],
-#                      quantity:   row[:quantity],
-#                      unit_price: row[:unit_price],
-#                      created_at: row[:created_at],
-#                      updated_at: row[:updated_at])
-# end
-=======
 CSV.foreach('./data/invoices.csv', headers: true, header_converters: :symbol) do |row|
   Invoice.create!(id:          row[:id],
                   merchant_id: row[:merchant_id],
@@ -57,5 +38,4 @@ CSV.foreach('./data/invoice_items.csv', headers: true, header_converters: :symbo
                      unit_price: row[:unit_price],
                      created_at: row[:created_at],
                      updated_at: row[:updated_at])
-end 
->>>>>>> d427f83a21a08cad013391722aa553bd51468b65
+end
