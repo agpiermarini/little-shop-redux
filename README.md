@@ -77,9 +77,9 @@ The project may not use:
 The application has been styled.
 The application uses a balanced, considered color scheme.
 The application implements a font (that is not the default font).
-The application utilizes a nav bar. 
-The style shows evidence of intentional layout. 
-Space and text is balanced. White space is used to visually separate content. 
+The application utilizes a nav bar.
+The style shows evidence of intentional layout.
+Space and text is balanced. White space is used to visually separate content.
 The application is easily usable. The user can intuitvely navigate between different portions of the application without manually entering the URL or using the back button on their browser.
 The application is minimally responsive.
 The application follows the design laid out in [these wireframes](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module2/projects/Little%20Shop%20WireFrames.pdf).
@@ -129,7 +129,7 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 At the end of this iteration, you should be able to view an index of all items, view a page for a single item, create an item, edit an item, and delete an item from both the index and the show pages.
 
 - When creating an item, there should be a dropdown of all merchants to select from.
-- You will want to utilize a default image for seeds. 
+- You will want to utilize a default image for seeds.
 - An image should be a string referencing a url to a photo.
 
 ### Iteration 4 - Seed Items
@@ -142,7 +142,7 @@ Create full RUD functionality (No Create) for an Invoice with the following char
 
 The following attributes must be present
 * merchant_id
-* status 
+* status
 
 Once you have the `Invoice` model started, finish it off by creating validations for the `Invoice` attributes.
 
@@ -150,7 +150,7 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all invoices, view a page for a single invoice, create an invoice, edit an invoice, and delete an invoice from both the index and the show pages.
+At the end of this iteration, you should be able to view an index of all invoices, view a page for a single invoice, edit an invoice, and delete an invoice from both the index and the show pages.
 
 ### Iteration 6 - Seed Invoices
 
@@ -158,7 +158,7 @@ Update the `seeds` file in your /db directory to parse the `invoices.csv`. When 
 
 ### Iteration 7 - Relating Items to Invoices
 
-Up until now, you've been working with one-to-many relationships. However, an invoice doesn't mean too much if you don't know which items are assoicated with it. 
+Up until now, you've been working with one-to-many relationships. However, an invoice doesn't mean too much if you don't know which items are assoicated with it.
 
 Build out an InvoiceItem model with the following attributes:
 * item_id
@@ -219,9 +219,9 @@ following criteria:
 
 ### 1. Feature Completeness
 
-* Exceeds Expectations: All features are correctly implemented along with two extensions 
-* Meets Expectations: All features defined in the assignment are correctly implemented 
-* Below Expectations: There are one or two features missing or incorrectly implemented 
+* Exceeds Expectations: All features are correctly implemented along with two extensions
+* Meets Expectations: All features defined in the assignment are correctly implemented
+* Below Expectations: There are one or two features missing or incorrectly implemented
 
 ### 2. Views
 
@@ -251,7 +251,7 @@ following criteria:
 
 * Exceeds Expectations: Project has a running test suite that covers all functionality, exercises the application at multiple levels, and covers edge cases
 * Meets Expectations: Project has a running test suite that tests at multiple levels
-* Below Expectations: Project has sporadic use of tests 
+* Below Expectations: Project has sporadic use of tests
 
 ### 7. Usability
 
@@ -264,4 +264,3 @@ following criteria:
 * Exceeds Expectations: Excellent use of branches, pull requests, code review and a project management tool.
 * Meets Expectations: Good use of branches, pull requests, and a project-management tool.
 * Below Expectations: Sporadic use of branches, pull requests, and/or project-management tool.
-
