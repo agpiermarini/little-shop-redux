@@ -26,9 +26,7 @@
           <tr>
             <td>
               <a class="merchant-name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-              <form class="edit-button"  method="get" action="/merchants/<%= merchant.id %>/edit">
-                <button class="edit-button" type="submit">Edit</button>
-              </form>
+              <a href="/merchants/<%= merchant.id %>/edit" class="edit-button" type="submit">Edit</a>
               <form class="delete-button" method="post" action="/merchants/<%= merchant.id %>">
                 <input type="hidden" name="_method" value="delete">
                 <button class="delete-button" type="submit" value="delete">Delete</button>
