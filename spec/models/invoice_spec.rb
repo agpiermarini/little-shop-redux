@@ -20,8 +20,6 @@ describe 'Instance method' do
       invoice_item1 = InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 1)
       invoice_item2 = InvoiceItem.create!(invoice_id: 1, quantity: 5, unit_price: 5)
 
-      require "pry"; binding.pry
-
       expect(invoice.total).to eq(26.00)
     end
   end
