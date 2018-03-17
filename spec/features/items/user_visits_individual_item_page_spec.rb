@@ -37,4 +37,18 @@ describe 'user visits individual item page' do
       expect(current_path).to eq "/items/#{item.id}/edit"
     end
   end
+
+  context 'they click on merchant title link' do
+    it 'they are redirected to /merchant/:id/' do
+      merchant = Merchant.create(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1')
+      visit "/items/#{item.id}"
+      click_link 'Edit'
+
+      expect(current_path).to eq "/items/#{item.id}/edit"
+    end
+  end
 end
