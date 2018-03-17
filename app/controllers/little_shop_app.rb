@@ -52,7 +52,7 @@ class LittleShopApp < Sinatra::Base
   get '/invoices' do
     erb :'invoices/index',
         :locals => {
-          :all_invoices => Invoice.all
+          :all_invoices => Invoice.all,
         }
   end
 
@@ -102,7 +102,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/invoices/:id' do
-    require "pry"; binding.pry
     invoice_id = params[:id]
     Invoice.update(params[:id], params[:update])
 

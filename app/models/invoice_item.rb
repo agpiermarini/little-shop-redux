@@ -1,5 +1,5 @@
 class InvoiceItem < ActiveRecord::Base
-  belongs_to :invoices
+  belongs_to :invoice
   belongs_to :item
 
   def total

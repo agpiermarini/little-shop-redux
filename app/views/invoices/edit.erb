@@ -18,6 +18,7 @@
       <form class="edit-invoice" action="/invoices/<%= invoice.id %>" method="post">
         <p class="input-label">Merchant</p>
         <select name="update[merchant_id]" id="merchant">
+            <option value="<%= invoice.merchant.id %>" disabled selected><%= invoice.merchant.name %></option>
           <% all_merchants.order(:name).each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
