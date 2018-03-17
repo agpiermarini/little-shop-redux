@@ -66,8 +66,8 @@ class LittleShopApp < Sinatra::Base
   get '/invoices/:id' do
     erb :'invoices/show',
         :locals => {
-          :invoice => Invoice.find(params[:id]),
-          :merchant => Merchant.find(Invoice.find(params[:id]).merchant_id)     # is this what we're supposed to do?
+          :invoice => Invoice.find(params[:id])
+          # :merchant => Merchant.find(Invoice.find(params[:id]).merchant_id)     # is this what we're supposed to do?
         }
   end
 

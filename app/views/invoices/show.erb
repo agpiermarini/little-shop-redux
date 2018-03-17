@@ -19,6 +19,6 @@
         <button class='delete_invoice' type='submit' value='delete'>Delete</button>
       </form>
     </header>
-    <a href="/merchants/<%= invoice.merchant_id %>"><%= merchant.name %></a>
+    <a href="/merchants/<%= invoice.merchant.id %>"><%= invoice.merchant.name %></a>
   </body>
 </html>
