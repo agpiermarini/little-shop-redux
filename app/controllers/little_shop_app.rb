@@ -66,8 +66,8 @@ class LittleShopApp < Sinatra::Base
   get '/invoices/:id' do
     erb :'invoices/show',
         :locals => {
-          :invoice => Invoice.find(params[:id]),
-          :merchant => Merchant.find(Invoice.find(params[:id]).merchant_id)     # is this what we're supposed to do?
+          :invoice => Invoice.find(params[:id])
+          # :merchant => Merchant.find(Invoice.find(params[:id]).merchant_id)     # is this what we're supposed to do?
         }
   end
 
@@ -75,5 +75,29 @@ class LittleShopApp < Sinatra::Base
     Invoice.destroy(params[:id])
 
     redirect '/invoices'
+  end
+
+  get '/items' do
+    erb :'items/index',
+        :locals => {
+          :all_items => Item.all
+        }
+  end
+
+  get '/items/new' do
+    erb :'items/new'
+  end
+
+  delete '/items/:id' do
+    Item.destroy(params[:id])
+
+    redirect '/items'
+  end
+
+  get '/items/:id' do
+    erb :'items/show',
+        :locals => {
+          :item => Item.find(params[:id])
+        }
   end
 end

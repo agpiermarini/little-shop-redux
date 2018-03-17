@@ -1,4 +1,3 @@
-
 describe 'user visits invoices list page' do
   context 'they visit /invoices' do
     it 'they see a invoices header' do
