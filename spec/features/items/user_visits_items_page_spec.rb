@@ -12,7 +12,9 @@ describe 'user visits items list page' do
       item = Item.create(title: 'Things',
                          description: 'Thing #1',
                          price: 5,
-                         image: 'Picture of Thing #1')
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit '/items'
       click_link item[:title].to_s
 
@@ -25,7 +27,9 @@ describe 'user visits items list page' do
       Item.create(title: 'Things',
                   description: 'Thing #1',
                   price: 5,
-                  image: 'Picture of Thing #1')
+                  image: 'Picture of Thing #1',
+                  merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit '/items'
       click_link 'Create a New Item'
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Item</title>
+  </head>
+  <body>
+  <nav>
+    <a class="plain link" href="/">LittleShop</a>
+    <a class="plain link" href="/merchants">Merchants</a>
+    <a class="plain link" href="/items">Items</a>
+    <a class="plain link" href="/invoices">Invoices</a>
+  </nav>
+  <header>
+    <h1>Edit <%= item.title %></h1>
+  </header>
+  <section class="form-box">
+    <select class="" name="">
+
+    </select>
+    <form class="edit-item" action="/invoices/<%= invoice.id %>" method="post">
+      <p class="input-label">Name</p>
+      <input id="Name" type="text" name="invoice[name]">
+      <input type="submit" value="Update Invoice">
+    </form>
+      <a class="cancel-button" href="/invoices">Cancel</a>
+  </section>
+</body>
+</html>
