@@ -4,7 +4,9 @@ describe 'user visits individual item page' do
       item = Item.create(title: 'Things',
                          description: 'Thing #1',
                          price: 5,
-                         image: 'Picture of Thing #1')
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
 
       expect(page).to have_content 'Things'
@@ -16,7 +18,9 @@ describe 'user visits individual item page' do
       item = Item.create(title: 'Things',
                          description: 'Thing #1',
                          price: 5,
-                         image: 'Picture of Thing #1')
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
       click_button 'Delete'
 
@@ -30,11 +34,28 @@ describe 'user visits individual item page' do
       item = Item.create(title: 'Things',
                          description: 'Thing #1',
                          price: 5,
-                         image: 'Picture of Thing #1')
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
       click_link 'Edit'
 
       expect(current_path).to eq "/items/#{item.id}/edit"
+    end
+  end
+
+  context 'they click on merchant title link' do
+    it 'they are redirected to /merchant/:id/' do
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
+      visit "/items/#{item.id}"
+      click_link 'Youuuuuu'
+
+      expect(current_path).to eq "/merchants/#{merchant.id}"
     end
   end
 end

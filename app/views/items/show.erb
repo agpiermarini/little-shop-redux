@@ -13,11 +13,12 @@
     </nav>
     <header>
       <h1><%= item.title %></h1>
-        <a class="edit-button" href="/items/<%= item.id %>/edit">Edit</button>
+        <a class="edit-button" href="/items/<%= item.id %>/edit">Edit</a>
       <form method="post" action="/items/<%= item.id %>">
         <input type='hidden' name='_method' value='delete'>
         <button class='delete_item' type='submit' value='delete'>Delete</button>
       </form>
     </header>
+    <a href="/merchants/<%= item.merchant.id %>"><%= item.merchant.name %></a>
   </body>
 </html>

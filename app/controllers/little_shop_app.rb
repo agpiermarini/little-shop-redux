@@ -59,7 +59,8 @@ class LittleShopApp < Sinatra::Base
   get '/invoices/:id/edit' do
     erb :'invoices/edit',
         :locals => {
-          :invoice => Invoice.find(params[:id])
+          :invoice => Invoice.find(params[:id]),
+          :all_merchants => Merchant.all
         }
   end
 
@@ -67,7 +68,6 @@ class LittleShopApp < Sinatra::Base
     erb :'invoices/show',
         :locals => {
           :invoice => Invoice.find(params[:id])
-          # :merchant => Merchant.find(Invoice.find(params[:id]).merchant_id)     # is this what we're supposed to do?
         }
   end
 
@@ -99,5 +99,13 @@ class LittleShopApp < Sinatra::Base
         :locals => {
           :item => Item.find(params[:id])
         }
+  end
+
+  post '/invoices/:id' do
+    require "pry"; binding.pry
+    invoice_id = params[:id]
+    Invoice.update(params[:id], params[:update])
+
+    redirect "/invoices/#{invoice_id}"
   end
 end

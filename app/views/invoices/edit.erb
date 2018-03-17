@@ -2,25 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Edit Invoice</title>
+    <title></title>
   </head>
   <body>
-  <nav>
-    <a class="plain link" href="/">LittleShop</a>
-    <a class="plain link" href="/merchants">Merchants</a>
-    <a class="plain link" href="/items">Items</a>
-    <a class="plain link" href="/invoices">Invoices</a>
-  </nav>
-  <header>
-    <h1>Edit <%= invoice.id %></h1>
-  </header>
-  <section class="form-box">
-    <form class="edit-invoice" action="/invoices/<%= invoice.id %>" method="post">
-      <p class="input-label">Name</p>
-      <input id="Name" type="text" name="invoice[name]">
-      <input type="submit" value="Update Invoice">
-    </form>
-      <a class="cancel-button" href="/invoices">Cancel</a>
-  </section>
-</body>
+    <nav>
+      <a class="plain link" href="/">LittleShop</a>
+      <a class="plain link" href="/merchants">Merchants</a>
+      <a class="plain link" href="/items">Items</a>
+      <a class="plain link" href="/invoices">Invoices</a>
+    </nav>
+    <header>
+      <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
+    </header>
+    <section class="form-box">
+      <form class="edit-invoice" action="/invoices/<%= invoice.id %>" method="post">
+        <p class="input-label">Merchant</p>
+        <select name="update[merchant_id]" id="merchant">
+          <% all_merchants.order(:name).each do |merchant| %>
+            <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <% end %>
+        </select>
+        <p class="input-label">Status</p>
+        <select name="update[status]" id="status">
+          <option value="shipped"><%= "Shipped" %></option>
+          <option value="pending"><%= "Pending" %></option>
+          <option value="returned"><%= "Returned" %></option>
+        </select>
+        <section class="cancel-submit">
+          <a class="cancel-button" href="/invoices">Cancel</a>
+          <input type="submit" value="Update Invoice">
+        </section>
+      </form>
+    </section>
+    <table>
+      <tr class="table-headers">
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+      </tr>
+      <% invoice.invoice_items.each do |invoice_item| %>
+        <tr>
+          <td><a class="item-id" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
+          <td><%= invoice_item.item.title %></td>
+          <td><%= invoice_item.quantity %></td>
+          <td><%= invoice_item.unit_price %></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
 </html>
