@@ -83,4 +83,16 @@ class LittleShopApp < Sinatra::Base
           :all_items => Item.all
         }
   end
+
+  get '/items/new' do
+    erb :'items/new'
+  end
+
+  get '/items/:id' do
+    erb :'items/show',
+        :locals => {
+          :item => Item.find(params[:id])
+        }
+  end
+
 end
