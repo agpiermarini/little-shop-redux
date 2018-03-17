@@ -88,11 +88,16 @@ class LittleShopApp < Sinatra::Base
     erb :'items/new'
   end
 
+  delete '/items/:id' do
+    Item.destroy(params[:id])
+
+    redirect '/items'
+  end
+
   get '/items/:id' do
     erb :'items/show',
         :locals => {
           :item => Item.find(params[:id])
         }
   end
-
 end

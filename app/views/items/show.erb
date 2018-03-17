@@ -14,8 +14,9 @@
     <header>
       <h1><%= item.title %></h1>
         <a class="edit-button" href="/items/<%= item.id %>/edit">Edit</button>
-      <form method="delete" action="/items/<%= item.id %>">
-        <button class="delete_merchant" type="submit" >Delete</button>
+      <form method="post" action="/items/<%= item.id %>">
+        <input type='hidden' name='_method' value='delete'>
+        <button class='delete_item' type='submit' value='delete'>Delete</button>
       </form>
     </header>
   </body>

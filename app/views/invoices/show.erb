@@ -14,8 +14,9 @@
     <header>
       <h1>Invoice: <%= invoice.id %> - <%= invoice.status %></h1>
         <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</button>
-      <form method="delete" action="/invoices/<%= invoice.id %>">
-        <button class="delete_invoice" type="submit">Delete</button>
+      <form method="post" action="/invoices/<%= invoice.id %>">
+        <input type='hidden' name='_method' value='delete'>
+        <button class='delete_invoice' type='submit' value='delete'>Delete</button>
       </form>
     </header>
     <a href="/merchants/<%= invoice.merchant_id %>"><%= merchant.name %></a>
