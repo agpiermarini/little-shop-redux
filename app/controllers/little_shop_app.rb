@@ -110,11 +110,10 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/items/:id' do
-    require 'pry' ; binding.pry
+    item_id = params[:id]
     Item.update(params[:id], params[:update])
 
-    redirect '/items'
+    redirect "/items/#{item_id}"
   end
-
 
 end
