@@ -15,15 +15,27 @@
     <h1>Edit <%= item.title %></h1>
   </header>
   <section class="form-box">
-    <select class="" name="">
-
-    </select>
-    <form class="edit-item" action="/invoices/<%= invoice.id %>" method="post">
-      <p class="input-label">Name</p>
-      <input id="Name" type="text" name="invoice[name]">
-      <input type="submit" value="Update Invoice">
+    <form class="edit-item" action="/items/<%= item.id %>" method="post">
+      <p class="input-label">Merchant</p>
+      <select name="update[merchant_id]" id="Merchant">
+        <% all_merchants.order(:name).each do |merchant| %>
+          <option value="<%= merchant.id %>"><%= merchant.name %></option>
+        <% end %>
+      </select>
+      <p class="input-label">Title</p>
+      <input id="Title" type="text" name="update[title]" placeholder="<%= item.title %>">
+      <p class="input-label">Description</p>
+      <input id="Description" value="TEST" class="larger-input-space" type="text" name="update[description]" placeholder="<%= item.description %>">
+      <p class="input-label">Price</p>
+      <input id="Price" type="text" name="update[price]" placeholder="<%= item.price %>">
+      <p class="input-label">Image</p>
+      <input type="text" name="update[image]">
+      <section class = "cancel-submit">
+        <input type="submit" value="Update Item">
+        <a class="cancel-button" href="/invoices">Cancel</a>
+      </section>
     </form>
-      <a class="cancel-button" href="/invoices">Cancel</a>
+
   </section>
 </body>
 </html>

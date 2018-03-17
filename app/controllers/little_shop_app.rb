@@ -100,4 +100,20 @@ class LittleShopApp < Sinatra::Base
           :item => Item.find(params[:id])
         }
   end
+
+  get '/items/:id/edit' do
+    erb :'items/edit',
+        :locals => {
+          :item => Item.find(params[:id]),
+          :all_merchants => Merchant.all
+        }
+  end
+
+  post '/items/:id' do
+    Item.update(params[:id], params[:update])
+    require 'pry' ; binding.pry
+    redirect '/items'
+  end
+
+
 end
