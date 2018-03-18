@@ -7,6 +7,14 @@ class Merchant < ActiveRecord::Base
     items.count
   end
 
+  def average_item_price
+    items.average('price')
+  end
+
+  def total_item_cost
+    items.sum('price')
+  end
+
   def self.most_items
   end
 
