@@ -7,6 +7,8 @@ class Merchant < ActiveRecord::Base
     items.count
   end
 
+
+
   def average_item_price
     items.average('price')
   end
@@ -16,6 +18,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def self.most_items
+    # .select("COUNT(items.id) AS item_count, merchants.id").joins(:items).group("merchants.id").first
   end
 
   def self.highest_price_item

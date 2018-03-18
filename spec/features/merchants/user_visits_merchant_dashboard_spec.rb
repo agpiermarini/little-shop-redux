@@ -66,7 +66,7 @@ describe 'user visits merchant dashboard' do
   end
 
   context "they see an individual merchant's analytics" do
-    skip "shows an individual merchant's item count" do
+    it "shows an individual merchant's item count" do
       merchant = Merchant.create(name: 'Crocs')
       item1 = Item.create!(title: 'Sandals',
                           description: 'Shoes with holes',
@@ -89,6 +89,7 @@ describe 'user visits merchant dashboard' do
                           image: 'Picture of tremendously ugly shoes',
                           merchant_id: 1)
 
+      visit '/merchants-dashboard'
       within(:css, "#merchant-id-#{merchant.id}")
       expect(page).to have_content("Item Count: 4")
     end
