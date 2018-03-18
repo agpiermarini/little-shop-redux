@@ -11,16 +11,16 @@ require './app/models/invoice_item'
 #                   updated_at: row[:updated_at])
 # end
 
-CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |row|
-  Item.create(id:          row[:id],
-              title:       row[:name],
-              description: row[:description],
-              price:       row[:unit_price],
-              image:       'https://farm9.staticflickr.com/8745/17257013096_3062f69755_m.jpg',
-              merchant_id: row[:merchant_id],
-              created_at:  row[:created_at],
-              updated_at:  row[:updated_at])
-end
+# CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |row|
+#   Item.create(id:          row[:id],
+#               title:       row[:name],
+#               description: row[:description],
+#               price:       row[:unit_price],
+#               image:       'https://farm9.staticflickr.com/8745/17257013096_3062f69755_m.jpg',
+#               merchant_id: row[:merchant_id],
+#               created_at:  row[:created_at],
+#               updated_at:  row[:updated_at])
+# end
 
 CSV.foreach('./data/invoices.csv', headers: true, header_converters: :symbol) do |row|
   Invoice.create!(id:          row[:id],
