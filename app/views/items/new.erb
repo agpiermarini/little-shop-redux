@@ -1,1 +1,40 @@
-<h1>Create</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create Item</title>
+  </head>
+  <body>
+  <nav>
+    <a class="plain link" href="/">LittleShop</a>
+    <a class="plain link" href="/merchants">Merchants</a>
+    <a class="plain link" href="/items">Items</a>
+    <a class="plain link" href="/invoices">Invoices</a>
+  </nav>
+  <header>
+    <h1>Create New Item</h1>
+  </header>
+  <section class="form-box">
+    <form class="create-item" action="/items/new" method="post">
+      <p class="input-label">Merchant</p>
+        <select name="item[merchant_id]" id="Merchant">
+          <% all_merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <% end %>
+        </select>
+      <p class="input-label">Title</p>
+        <input id="Title" type="text" name="items[title]">
+      <p class="input-label">Description</p>
+        <input id="Description" type="text" name="items[description]">
+      <p class="input-label">Price</p>
+        <input id="Price" type="text" name="items[price]">
+      <p class="input-label">Image URL</p>
+        <input id="Image URL" type="text" name="items[image]">
+      <section class="cancel-submit">
+        <a class="cancel-button" href="/items">Cancel</a>
+        <input type="submit" value="Create Item"/>
+      </section>
+    </form>
+  </section>
+</body>
+</html>

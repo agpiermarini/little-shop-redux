@@ -21,6 +21,7 @@ describe 'user visits invoices list page' do
   context 'they click on edit invoice button' do
     it 'they are redirected to /invoice/:id/edit' do
       invoice = Invoice.create(merchant_id: 1, status: 'shipping')
+      Merchant.create(id: 1, name: 'Boaty McBoatface')
       visit '/invoices'
       click_link 'Edit'
 

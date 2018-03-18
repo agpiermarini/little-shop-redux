@@ -84,14 +84,17 @@ class LittleShopApp < Sinatra::Base
         }
   end
 
-  get '/items/new' do
-    erb :'items/new'
-  end
-
   delete '/items/:id' do
     Item.destroy(params[:id])
 
     redirect '/items'
+  end
+
+  get '/items/new' do
+    erb :'items/new',
+    :locals => {
+      :all_merchants => Merchant.all
+    }
   end
 
   get '/items/:id' do
@@ -107,6 +110,13 @@ class LittleShopApp < Sinatra::Base
           :item => Item.find(params[:id]),
           :all_merchants => Merchant.all
         }
+  end
+
+  post '/items/new' do
+    require 'pry'; binding.pry
+    Item.create(params[:items])
+
+    redirect '/items'
   end
 
   post '/items/:id' do
