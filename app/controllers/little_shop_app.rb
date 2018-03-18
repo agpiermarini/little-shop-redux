@@ -113,7 +113,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/items/new' do
-    require 'pry'; binding.pry
     Item.create(params[:items])
 
     redirect '/items'
