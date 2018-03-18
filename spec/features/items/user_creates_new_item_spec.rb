@@ -17,33 +17,33 @@ describe 'user visits create new item page' do
     end
   end
 
-  # context 'they do not fill in a name' do
-  #   skip 'they recieve a flash error' do
-  #     Merchant.create(name: 'Ussss')
-  #     visit '/merchants/new'
-  #     click_button 'Create Merchant'
-  #
-  #     expect(current_path).to eq('flash error!!!!??')
-  #   end
-  # end
-  #
-  # context 'they try to submit a blank space as a name' do
-  #   skip 'they recieve a flash error' do
-  #     Merchant.create(name: 'Ussss')
-  #     visit "/merchants/new"
-  #     fill_in 'Name', :with => ' '
-  #     click_button 'Create Merchant'
-  #
-  #     expect(current_path).to eq('flash error!!!!??')
-  #   end
-  # end
-  #
-  # context 'they cancel new merchant creation' do
-  #   it 'they return to merchants' do
-  #     visit '/merchants/new'
-  #     click_link 'Cancel'
-  #
-  #     expect(current_path).to eq('/merchants')
-  #   end
-  # end
+  context 'they do not fill in a form field' do
+    skip 'they recieve a flash error' do
+      Merchant.create(name: 'Ussss')
+      visit '/items/new'
+      click_button 'Create Item'
+
+      expect(current_path).to eq('flash error!!!!??')
+    end
+  end
+
+  context 'they try to submit a blank space as a form field' do
+    skip 'they recieve a flash error' do
+      Merchant.create(name: 'Ussss')
+      visit "/items/new"
+      fill_in 'Title', :with => ' '
+      click_button 'Create New Item'
+
+      expect(current_path).to eq('flash error!!!!??')
+    end
+  end
+
+  context 'they cancel new item creation' do
+    it 'they return to items' do
+      visit '/items/new'
+      click_link 'Cancel'
+
+      expect(current_path).to eq('/items')
+    end
+  end
 end
