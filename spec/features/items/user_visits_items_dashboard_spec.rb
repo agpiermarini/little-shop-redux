@@ -1,40 +1,6 @@
-describe 'Validation' do
-  it 'should be invalid if it does not have a title' do
-    item1 = Item.new
-    item2 = Item.new(description: 'Thing #1', price: 5, image: 'Picture of Thing #1')
-
-    expect(item1).to_not be_valid
-    expect(item2).to_not be_valid
-  end
-
-  it 'should be invalid if it does not have a description' do
-    item = Item.new(title: 'Things', price: 5, image: 'Picture of Thing #1')
-
-    expect(item).to_not be_valid
-  end
-
-  it 'should be invalid if it does not have a price' do
-    item = Item.new(title: 'Things', description: 'Thing #1', image: 'Picture of Thing #1')
-
-    expect(item).to_not be_valid
-  end
-
-  it 'should be invalid if it does not have an image' do
-    item = Item.new(title: 'Things', description: 'Thing #1', price: 5)
-
-    expect(item).to_not be_valid
-  end
-
-  it 'should be valid if it has all attributes' do
-    item = Item.new(title: 'Things', description: 'Thing #1', price: 5, image: 'Picture of Thing #1')
-
-    expect(item).to be_valid
-  end
-end
-
-describe 'Class Methods' do
-  describe '.count' do
-    it 'returns total number of items' do
+describe 'user visits items dashboard page' do
+  context 'they visit /items-dashboard' do
+    it 'they see item dashboard header' do
       Item.create(title: 'Thing',
                   description: 'Thing #1',
                   price: 500,
@@ -50,13 +16,14 @@ describe 'Class Methods' do
                   price: 1500,
                   image: 'Picture of necklace',
                   merchant_id: 3)
+      visit '/items-dashboard'
 
-      expect(Item.count).to eq(3)
+      expect(page).to have_content 'Items Dashboard'
     end
   end
 
-  describe '.average(price)' do
-    it 'returns average price per item' do
+  context 'they visit /items-dashboard' do
+    it 'they see total item count' do
       Item.create(title: 'Thing',
                   description: 'Thing #1',
                   price: 500,
@@ -72,13 +39,15 @@ describe 'Class Methods' do
                   price: 1500,
                   image: 'Picture of necklace',
                   merchant_id: 3)
+      visit '/items-dashboard'
 
-      expect(Item.average(:price)).to eq(1000)
+      expect(page).to have_content 'Total Item Count'
+      expect(page).to have_content 3
     end
   end
 
-  describe '.average(price)' do
-    it 'returns average price per item' do
+  context 'they visit /items-dashboard' do
+    it 'they see average price per item' do
       Item.create(title: 'Thing',
                   description: 'Thing #1',
                   price: 500,
@@ -94,13 +63,15 @@ describe 'Class Methods' do
                   price: 1500,
                   image: 'Picture of necklace',
                   merchant_id: 3)
+      visit '/items-dashboard'
 
-      expect(Item.average(:price)).to eq(1000)
+      expect(page).to have_content 'Avg Price Per Item'
+      expect(page).to have_content 1000
     end
   end
 
-  describe '.newest_item' do
-    it 'returns the title of the most recently created item' do
+  context 'they visit /items-dashboard' do
+    it 'they see the titles of the newest and oldest items' do
       Item.create(title: 'Thing',
                   description: 'Thing #1',
                   price: 500,
@@ -116,30 +87,13 @@ describe 'Class Methods' do
                   price: 1500,
                   image: 'Picture of necklace',
                   merchant_id: 3)
+      visit '/items-dashboard'
 
-      expect(Item.newest_item).to eq('Necklace')
-    end
-  end
-
-  describe '.oldest_item' do
-    it 'returns the title of the oldest item' do
-      Item.create(title: 'Thing',
-                  description: 'Thing #1',
-                  price: 500,
-                  image: 'Picture of Thing #1',
-                  merchant_id: 1)
-      Item.create(title: 'Ring',
-                  description: 'Sparkly',
-                  price: 1000,
-                  image: 'Picture of ring',
-                  merchant_id: 2)
-      Item.create(title: 'Necklace',
-                  description: 'Long',
-                  price: 1500,
-                  image: 'Picture of necklace',
-                  merchant_id: 3)
-
-      expect(Item.oldest_item).to eq('Thing')
+      expect(page).to have_content 'Item by Age'
+      expect(page).to have_content 'Newest'
+      expect(page).to have_content 'Necklace'
+      expect(page).to have_content 'Oldest'
+      expect(page).to have_content 'Thing'
     end
   end
 end

@@ -113,7 +113,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/items/new' do
-    require 'pry'; binding.pry
     Item.create(params[:items])
 
     redirect '/items'
@@ -131,5 +130,9 @@ class LittleShopApp < Sinatra::Base
     Invoice.update(params[:id], params[:update])
 
     redirect "/invoices/#{invoice_id}"
+  end
+
+  get '/items-dashboard' do
+    erb :'items/dashboard'
   end
 end
