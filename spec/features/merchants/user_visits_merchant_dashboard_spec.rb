@@ -66,7 +66,7 @@ describe 'user visits merchant dashboard' do
   end
 
   context "they see an individual merchant's analytics" do
-    it "shows an individual merchant's item count" do
+    skip "shows an individual merchant's item count" do
       merchant = Merchant.create(name: 'Crocs')
       item1 = Item.create!(title: 'Sandals',
                           description: 'Shoes with holes',
