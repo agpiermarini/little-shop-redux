@@ -50,7 +50,10 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants-dashboard' do
-    erb :'merchants/dashboard'
+    erb :'merchants/dashboard',
+        :locals => {
+          :all_merchants => Merchant.all
+        }
   end
 
   get '/invoices' do
