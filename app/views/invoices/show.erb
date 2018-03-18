@@ -12,8 +12,8 @@
       <a class="plain link" href="/invoices">Invoices</a>
     </nav>
     <header>
-      <h1>Invoice: <%= invoice.id %> - <%= invoice.status %></h1>
-      <h1>Total Charges: $<%= invoice.total %></h1>
+      <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
+      <h1>Total Charges: $<%= invoice.delimited_total %></h1>
         <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</button>
       <form method="post" action="/invoices/<%= invoice.id %>">
         <input type='hidden' name='_method' value='delete'>
