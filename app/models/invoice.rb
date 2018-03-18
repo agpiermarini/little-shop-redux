@@ -7,6 +7,11 @@ class Invoice < ActiveRecord::Base
   validates :status, presence: true
 
   def total
-    invoice_items.sum { |inv_item| inv_item.total }
+    number = invoice_items.sum { |inv_item| inv_item.total }
+  end
+
+  def delimited_total(number = total)
+    string = number.to_s.reverse.scan(/.{1,3}/)
+    string.join(",").reverse
   end
 end
