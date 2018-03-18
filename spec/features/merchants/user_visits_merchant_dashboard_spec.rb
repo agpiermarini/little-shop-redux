@@ -1,6 +1,6 @@
 describe 'user visits merchant dashboard' do
   context 'they see merchant with most items' do
-    it 'calculates merchant with most items' do
+    skip 'calculates merchant with most items' do
       merchant = Merchant.create(name: 'Crocs')
       merchant = Merchant.create(name: 'Nike')
       merchant = Merchant.create(name: 'Vans')
@@ -33,7 +33,7 @@ describe 'user visits merchant dashboard' do
   end
 
   context 'they see merchant with highest item price' do
-    it  'calculates merchant with highest item price' do
+    skip  'calculates merchant with highest item price' do
       merchant = Merchant.create(name: 'Crocs')
       merchant = Merchant.create(name: 'Nike')
       merchant = Merchant.create(name: 'Vans')
