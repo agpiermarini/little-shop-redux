@@ -131,4 +131,8 @@ class LittleShopApp < Sinatra::Base
 
     redirect "/invoices/#{invoice_id}"
   end
+
+  get '/items-dashboard' do
+    erb :'items/dashboard'
+  end
 end
