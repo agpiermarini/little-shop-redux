@@ -3,7 +3,7 @@ describe 'user visits individual invoice page' do
     invoice = Invoice.create(merchant_id: 100, status: 'pending')
     Merchant.create(id: 100, name: 'Boaty McBoatface')
     visit "/invoices/#{invoice.id}"
-    expect(page).to have_content "Invoice: #{invoice.id} - #{invoice.status}"
+    expect(page).to have_content "Invoice: #{invoice.id} - #{invoice.status.capitalize}"
   end
 end
 
