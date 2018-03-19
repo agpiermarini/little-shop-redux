@@ -17,20 +17,20 @@
 
     <div class="Item Count">
       <h3>Total Item Count</h3>
-      <h2><%= items.count %></h2>
+      <h2><%= Item.count %></h2>
     </div>
 
     <div class="Average Price">
       <h3>Avg Price Per Item</h3>
-      <h2><%= items.average(:price).round(2) %></h2>
+      <h2><%= Item.average(:price).round(2) %></h2>
     </div>
 
     <div class="Item by Age">
       <h3>Item by Age</h3>
       <h3>Newest</h3>
-      <h4><%= items.newest_item %></h2>
+      <h4><%= Item.newest_item %></h2>
       <h3>Oldest</h3>
-      <h4><%= items.oldest_item %></h2>
+      <h4><%= Item.oldest_item %></h2>
     </div>
 
   </body>
