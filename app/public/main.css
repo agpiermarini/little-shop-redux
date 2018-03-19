@@ -1,111 +1,155 @@
 body {
-  font-style: Arial
-}
-
-nav {
-  width: 820px;
-  display: inline-block;
-  font-size: 17px;
-  padding: 5px 20px;
-  border-style: solid;
-}
-
-.little-shop {
-  text-decoration: none;
-  float: left;
-  color: black
-}
-
-.right-links {
-  text-decoration: none;
-  float: right;
-  padding-left: 30px;
-  font-size: 17px;
-  color: black;
+  font-family: 'Raleway', sans-serif;
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  background: #00cc99;
+  align-items: center;
+}
+
+header h1 a {
+  padding: 8px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black
+}
+
+header h1 a:hover {
+  background: #80ffdf;
+  color: black;
+  cursor: pointer;
+}
+
+nav ul li {
   display: inline-block;
-  width: 820px;
-  background-color: #A9A9A9;
-  padding: 10px 20px;
-  border-style: solid;
+  padding: 8px;
 }
 
-h1 {
-  padding-left: 335px;
-  padding-bottom: 5px;
-  margin: 0px 0px;
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px
 }
 
-.dashboard {
-  margin-top: 0px;
-  font-size: 17px;
-  float: left
+nav ul li:hover {
+  background: #80ffdf;
+  color: white;
+  cursor: pointer;
 }
 
-.create-button {
+section a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px;
+  font-size: 16px;
+  color: black
+}
+
+section a:hover {
+  color: #00cc99;
+  cursor: pointer;
+}
+
+section ul {
+  display: block;
+}
+
+section ul li h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+section ul li a {
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 5px 5px;
   text-decoration: none;
-  background-color: white;
+  background-color: #00cc99;
   color: black;
-  display: block;
-  width: 200px;
+  width: 250px;
   height: 20px;
   padding: 3px 3px;
   text-align: center;
-  font-size: 17px;
+  font-size: 20px;
+}
+
+section ul li a:hover {
+  background-color: #ffd633;
+  cursor: pointer;
+  color: black
 }
 
 table {
+  display: flex;
+  justify-content: center;
   border-collapse: separate;
-  border-spacing: 5px;
-  margin: 20px 70px;
+  border-spacing: 8px;
+  margin: 30px 0;
+  font-size: 20px
 }
 
-td {
-  vertical-align: middle;
-  border-style: solid;
-  display: inline;
-}
-
-tr {
-  line-height: 16px;
+table tr {
+  border: solid
 }
 
 table tr:nth-child(even) td{
   background-color: #A9A9A9;
 }
 
+td {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px
+}
+
 a.merchant-name {
-  display: inline-block;
-  width: 580px;
+  width: 1000px;
   padding: 0px 10px;
+  color: black;
+  text-decoration: none;
+  align-self: center;
 }
 
-form.edit-button {
-  display: inline-block;
-  margin-top: 0px
+a.merchant-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-form.delete-button {
-  display: inline-block;
-}
-
-button.edit-button {
-  background-color: #ffe066;
-  width: 50px;
-  border-style: solid;
-  border-color: black;
+a.edit-button {
+  align-self: center;
+  padding: 3.1px;
+  background-color: #00cc99;
+  width: 40px;
+  border: 1px solid #000000;
   box-shadow: 2px 2px;
-  margin-bottom: 3px
+  color: black;
+  text-decoration: none;
+  text-align: center
+}
+
+a.edit-button:hover {
+  background-color: #ffd633;
+  cursor: pointer;
+  color: black
 }
 
 button.delete-button {
-  background-color: #ff9999;
-  width: 50px;
+  background-color: #00cc99;
+  width: 100%;
   border: 1px solid #000000;
   box-shadow: 2px 2px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+button.delete-button:hover {
+  background-color: #e62e00;
+  cursor: pointer;
+  color: black
 }
