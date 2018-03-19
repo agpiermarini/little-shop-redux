@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Merchants</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <header>
+      <h1>Invoices Dashboard</h1>
+    </header>
+    <div class="Status Percentages Card ">
+      <p class="Card-Header">Status Percentages</p>
+      <p class="Card-Header-Label">Pending: <%= Invoice.status_percentage(status: "pending") %>%</p>
+      <p class="Card-Header-Label">Shipped: <%= Invoice.status_percentage(status: "shipped") %>%</p>
+      <p class="Card-Header-Label">Returned: <%= Invoice.status_percentage(status: "returned") %>%</p>
+    </div>
+
+    <div class="Unit Prices Card ">
+      <p class="Card-Header">Unit Prices</p>
+      <p class="Card-Subheader">Highest:</p>
+      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.highest_unit_price.id %>"><%= Invoice.highest_unit_price.id %></a></p>
+      <p class="Card-Subheader">Lowest:</p>
+      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.lowest_unit_price.id %>"><%= Invoice.lowest_unit_price.id %></a></p>
+    </div>
+
+    <div class="Quantity Card ">
+      <p class="Card-Header">Quantity</p>
+      <p class="Card-Subheader">Highest:</p>
+      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.highest_quantity.id %>"><%= Invoice.highest_quantity.id %></a></p>
+      <p class="Card-Subheader">Lowest:</p>
+      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.lowest_quantity.id %>"><%= Invoice.lowest_quantity.id %></a></p>
+    </div>
+  </body>
+</html>

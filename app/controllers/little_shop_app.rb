@@ -140,10 +140,7 @@ class LittleShopApp < Sinatra::Base
     erb :'items/dashboard'
   end
 
-  get '/items-dashboard' do
-    erb :'invoices/dashboard',
-    :locals => {
-      :invoices => Invoice.all
-    }
+  get '/invoices-dashboard' do
+    erb :'invoices/dashboard'
   end
 end
