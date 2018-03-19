@@ -2,36 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
     <title>Invoices</title>
-    <link rel="stylesheet" href="/main.css">
   </head>
+
   <body>
-    <%= erb :'partials/nav' %>
     <header>
-      <a class="dashboard" href="/invoice/dashboard">Dashboard</a>
-      <h1>Invoices</h1>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
     </header>
 
+    <section>
+      <a href="/invoices/dashboard">Invoices Dashboard</a>
+      <ul>
+        <li><h1>Invoices</h1></li>
+      </ul>
+    </section>
 
-  <table>
-    <tbody>
-    <% all_invoices.each do |invoice| %>
+
+    <table>
+      <% all_invoices.each do |invoice| %>
         <tr>
           <td>
-            <a href="/invoices/<%= invoice.id %>"><%= invoice.id %></a>
-              <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</a>
+            <a class = "name" href="/invoices/<%= invoice.id %>"><%= invoice.id %></a>
+            <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</a>
             <form method="post" action="/invoices/<%= invoice.id %>">
               <input type="hidden" name="_method" value="delete">
-              <button class="delete_invoice" type="submit" value="delete">Delete</a>
+              <button class="delete-button" type="submit" value="delete">Delete</a>
             </form>
           </td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
-
+        <% end %>
+    </table>
+    
   </body>
 </html>

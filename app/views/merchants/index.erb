@@ -21,7 +21,7 @@
     </header>
 
     <section>
-      <a href="/merchant/dashboard">Dashboard</a>
+      <a href="/merchant/dashboard">Merchant Dashboard</a>
       <ul>
         <li><h1>Merchants</h1></li>
         <li><a  href="/merchants/new">Create a New Merchant</a></il>
@@ -32,9 +32,9 @@
       <% all_merchants.each do |merchant| %>
       <tr>
         <td>
-          <a class="merchant-name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+          <a class="name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
           <a class="edit-button" href="/merchants/<%= merchant.id %>/edit" type="submit">Edit</a>
-          <form class="delete-button" method="post" action="/merchants/<%= merchant.id %>">
+          <form method="post" action="/merchants/<%= merchant.id %>">
             <input type="hidden" name="_method" value="delete">
             <button class="delete-button" type="submit" value="delete">Delete</button>
           </form>

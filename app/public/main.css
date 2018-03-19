@@ -108,7 +108,7 @@ td {
   margin: 2px
 }
 
-a.merchant-name {
+a.name {
   width: 1000px;
   padding: 0px 10px;
   color: black;
@@ -116,7 +116,7 @@ a.merchant-name {
   align-self: center;
 }
 
-a.merchant-name:hover {
+a.name:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -134,6 +134,21 @@ a.edit-button {
 }
 
 a.edit-button:hover {
+  background-color: #ffd633;
+  cursor: pointer;
+  color: black
+}
+
+button.edit-button {
+  background-color: #00cc99;
+  width: 100%;
+  border: 1px solid #000000;
+  box-shadow: 2px 2px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+button.edit-button:hover {
   background-color: #ffd633;
   cursor: pointer;
   color: black

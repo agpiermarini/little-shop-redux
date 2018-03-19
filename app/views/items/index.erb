@@ -2,35 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Items</title>
-    <link rel="stylesheet" href="/main.css">
   </head>
 
   <body>
-    <%= erb :'partials/nav' %>
-
     <header>
-      <a class="dashboard" href="/items/dashboard">Dashboard</a>
-      <h1>Items</h1>
-      <a class="create-button" href="/items/new">Create a New Item</a>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
     </header>
+
+    <section>
+      <a href="/merchant/dashboard">Items Dashboard</a>
+      <ul>
+        <li><h1>Items</h1></li>
+        <li><a  href="/items/new">Create a New Item</a></il>
+      </ul>
+    </section>
 
     <table>
       <% all_items.each do |item| %>
-          <tr>
-            <td>
-              <a class="item-name" href="/items/<%= item.id %>"><%= item.title %></a>
-              <form class="edit-button"  method="get" action="/items/<%= item.id %>/edit">
-                <button class="edit-button" type="submit">Edit</button>
-              </form>
-              <form class="delete-button" method="post" action="/items/<%= item.id %>">
-                <input type="hidden" name="_method" value="delete">
-                <button class="delete-button" type="submit" value="delete">Delete</button>
-              </form>
-            </td>
-          </tr>
-        <% end %>
+      <tr>
+        <td>
+          <a class="name" href="/items/<%= item.id %>"><%= item.title %></a>
+          <form method="get" action="/items/<%= item.id %>/edit">
+            <button class="edit-button" type="submit">Edit</button>
+          </form>
+          <form method="post" action="/items/<%= item.id %>">
+            <input type="hidden" name="_method" value="delete">
+            <button class="delete-button" type="submit" value="delete">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% end %>
     </table>
 
   </body>
