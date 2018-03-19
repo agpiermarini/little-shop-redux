@@ -168,3 +168,51 @@ button.delete-button:hover {
   cursor: pointer;
   color: black
 }
+
+.cards {
+  margin: 30px;
+}
+
+.cards img {
+  width: 250px;
+  height: 200px
+}
+
+.cards ul {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cards ul li {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 20px;
+  border: solid;
+  padding: 10px;
+  width: 250px;
+}
+
+.cards ul li a {
+  text-decoration: none;
+  color: black;
+  align-self: center;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.cards ul li a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: black
+}
+
+.cards ul li h1 {
+  align-self: center;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center
+}
