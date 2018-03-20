@@ -17,8 +17,14 @@ describe 'Instance method' do
   describe 'total' do
     it 'calculates total amount charged invoice' do
       invoice = Invoice.create!(id: 1, merchant_id: 1, status: 'pending')
-      invoice_item1 = InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 1)
-      invoice_item2 = InvoiceItem.create!(invoice_id: 1, quantity: 5, unit_price: 5)
+      invoice_item1 = InvoiceItem.create!(item_id: 1,
+                                          invoice_id: 1,
+                                          quantity: 1,
+                                          unit_price: 1)
+      invoice_item2 = InvoiceItem.create!(item_id: 1,
+                                          invoice_id: 1,
+                                          quantity: 5,
+                                          unit_price: 5)
 
       expect(invoice.total).to eq(26.00)
     end
@@ -65,11 +71,11 @@ describe 'Class method' do
       Invoice.create!(merchant_id: 1, status: 'pending')
       Invoice.create!(merchant_id: 1, status: 'shipped')
       Invoice.create!(merchant_id: 1, status: 'pending')
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 99)
-      InvoiceItem.create!(invoice_id: 2, quantity: 5, unit_price: 5)
-      InvoiceItem.create!(invoice_id: 3, quantity: 5, unit_price: 102)
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 1)
-      InvoiceItem.create!(invoice_id: 3, quantity: 5, unit_price: 1)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 99)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 5, unit_price: 5)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 5, unit_price: 102)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 1)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 5, unit_price: 1)
 
 
       expect(Invoice.highest_unit_price.id).to eq(3)
@@ -81,11 +87,11 @@ describe 'Class method' do
       Invoice.create!(merchant_id: 1, status: 'pending')
       Invoice.create!(merchant_id: 1, status: 'shipped')
       Invoice.create!(merchant_id: 1, status: 'pending')
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 99)
-      InvoiceItem.create!(invoice_id: 2, quantity: 5, unit_price: 5)
-      InvoiceItem.create!(invoice_id: 3, quantity: 5, unit_price: 102)
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 4)
-      InvoiceItem.create!(invoice_id: 3, quantity: 5, unit_price: 63)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 99)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 5, unit_price: 5)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 5, unit_price: 102)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 4)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 5, unit_price: 63)
 
 
 
@@ -98,12 +104,12 @@ describe 'Class method' do
       Invoice.create!(merchant_id: 1, status: 'pending')
       Invoice.create!(merchant_id: 1, status: 'shipped')
       Invoice.create!(merchant_id: 1, status: 'pending')
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 99)
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 4)
-      InvoiceItem.create!(invoice_id: 2, quantity: 20, unit_price: 4)
-      InvoiceItem.create!(invoice_id: 2, quantity: 5, unit_price: 5)
-      InvoiceItem.create!(invoice_id: 3, quantity: 6, unit_price: 102)
-      InvoiceItem.create!(invoice_id: 3, quantity: 8, unit_price: 63)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 99)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 4)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 20, unit_price: 4)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 5, unit_price: 5)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 6, unit_price: 102)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 8, unit_price: 63)
 
 
 
@@ -116,12 +122,12 @@ describe 'Class method' do
       Invoice.create!(merchant_id: 1, status: 'pending')
       Invoice.create!(merchant_id: 1, status: 'shipped')
       Invoice.create!(merchant_id: 1, status: 'pending')
-      InvoiceItem.create!(invoice_id: 1, quantity: 20, unit_price: 99)
-      InvoiceItem.create!(invoice_id: 1, quantity: 6, unit_price: 4)
-      InvoiceItem.create!(invoice_id: 2, quantity: 20, unit_price: 4)
-      InvoiceItem.create!(invoice_id: 2, quantity: 5, unit_price: 5)
-      InvoiceItem.create!(invoice_id: 3, quantity: 20, unit_price: 102)
-      InvoiceItem.create!(invoice_id: 3, quantity: 8, unit_price: 63)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 20, unit_price: 99)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 6, unit_price: 4)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 20, unit_price: 4)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 5, unit_price: 5)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 20, unit_price: 102)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 8, unit_price: 63)
 
       expect(Invoice.lowest_quantity.id).to eq(2)
     end
