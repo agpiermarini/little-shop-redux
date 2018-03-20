@@ -24,9 +24,9 @@ class Invoice < ActiveRecord::Base
 
     # RETURNS INVOICE ASSOCIATED WITH HIGHEST TOTAL UNIT_PRICE
     # joins(:invoice_items)
-    # .select("invoices.id, sum(invoice_items.unit_price) AS total_unit_price")
+    # .select("invoices.id, sum(invoice_items.unit_price * invoice_items.quantity) AS total_charges")
     # .group(:id)
-    # .order("total_unit_price")
+    # .order("total_charges")
     # .last
 
     # RETURNS INVOICE ASSOCIATED WITH HIGHEST TOTAL CHARGES
@@ -42,9 +42,9 @@ class Invoice < ActiveRecord::Base
 
     # RETURNS INVOICE ASSOCIATED WITH LOWEST TOTAL UNIT PRICE
     # joins(:invoice_items)
-    # .select("invoices.id, sum(invoice_items.unit_price) AS total_unit_price")
+    # .select("invoices.id, sum(invoice_items.unit_price * invoice_items.quantity) AS total_charges")
     # .group(:id)
-    # .order("total_unit_price")
+    # .order("total_charges")
     # .first
 
     # RETURNS INVOICE ASSOCIATED WITH LOWEST TOTAL CHARGES
