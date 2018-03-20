@@ -99,14 +99,15 @@ describe 'Class method' do
       Invoice.create!(merchant_id: 1, status: 'shipped')
       Invoice.create!(merchant_id: 1, status: 'pending')
       InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 99)
+      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 4)
+      InvoiceItem.create!(invoice_id: 2, quantity: 20, unit_price: 4)
       InvoiceItem.create!(invoice_id: 2, quantity: 5, unit_price: 5)
       InvoiceItem.create!(invoice_id: 3, quantity: 6, unit_price: 102)
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 4)
       InvoiceItem.create!(invoice_id: 3, quantity: 8, unit_price: 63)
 
 
 
-      expect(Invoice.highest_unit_price.id).to eq(3)
+      expect(Invoice.highest_quantity.id).to eq(2)
     end
   end
 
@@ -115,15 +116,14 @@ describe 'Class method' do
       Invoice.create!(merchant_id: 1, status: 'pending')
       Invoice.create!(merchant_id: 1, status: 'shipped')
       Invoice.create!(merchant_id: 1, status: 'pending')
-      InvoiceItem.create!(invoice_id: 1, quantity: 56, unit_price: 99)
+      InvoiceItem.create!(invoice_id: 1, quantity: 20, unit_price: 99)
+      InvoiceItem.create!(invoice_id: 1, quantity: 6, unit_price: 4)
+      InvoiceItem.create!(invoice_id: 2, quantity: 20, unit_price: 4)
       InvoiceItem.create!(invoice_id: 2, quantity: 5, unit_price: 5)
-      InvoiceItem.create!(invoice_id: 3, quantity: 5, unit_price: 102)
-      InvoiceItem.create!(invoice_id: 1, quantity: 1, unit_price: 4)
-      InvoiceItem.create!(invoice_id: 3, quantity: 5, unit_price: 63)
+      InvoiceItem.create!(invoice_id: 3, quantity: 20, unit_price: 102)
+      InvoiceItem.create!(invoice_id: 3, quantity: 8, unit_price: 63)
 
-
-
-      expect(Invoice.lowest_quantity.id).to eq(1)
+      expect(Invoice.lowest_quantity.id).to eq(2)
     end
   end
 end

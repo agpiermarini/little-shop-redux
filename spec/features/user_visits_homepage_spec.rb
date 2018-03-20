@@ -1,11 +1,8 @@
-require './app/controllers/little_shop_app'
-
 describe 'user visits homepage' do
-  context 'they visit /' do
-    it 'they see a welcome message' do
-      visit '/'
+  it 'they see little shop logo' do
+    visit '/'
 
-      expect(page).to have_content 'Welcome!'
-    end
+    expect(page).to have_css("img[src*='shop-logo.png']")
+    expect(page).to_not have_content("Oops")
   end
 end

@@ -21,18 +21,55 @@ class Invoice < ActiveRecord::Base
 
   def self.highest_unit_price
     joins(:invoice_items).order("invoice_items.unit_price").last
+
+    # RETURNS INVOICE ASSOCIATED WITH HIGHEST TOTAL UNIT_PRICE
+    # joins(:invoice_items)
+    # .select("invoices.id, sum(invoice_items.unit_price * invoice_items.quantity) AS total_charges")
+    # .group(:id)
+    # .order("total_charges")
+    # .last
+
+    # RETURNS INVOICE ASSOCIATED WITH HIGHEST TOTAL CHARGES
+    # joins(:invoice_items)
+    # .select("invoices.id, sum(invoice_items.unit_price * invoice_items.quantity) AS total_charges")
+    # .group(:id)
+    # .order("total_charges")
+    # .last
   end
 
   def self.lowest_unit_price
     joins(:invoice_items).order("invoice_items.unit_price").first
+
+    # RETURNS INVOICE ASSOCIATED WITH LOWEST TOTAL UNIT PRICE
+    # joins(:invoice_items)
+    # .select("invoices.id, sum(invoice_items.unit_price * invoice_items.quantity) AS total_charges")
+    # .group(:id)
+    # .order("total_charges")
+    # .first
+
+    # RETURNS INVOICE ASSOCIATED WITH LOWEST TOTAL CHARGES
+    # joins(:invoice_items)
+    # .select("invoices.id, sum(invoice_items.unit_price * invoice_items.quantity) AS total_charges")
+    # .group(:id)
+    # .order("total_charges")
+    # .first
   end
 
   def self.highest_quantity
-    joins(:invoice_items).order("invoice_items.quantity").last
-
+    joins(:invoice_items)
+    .select("invoices.id, sum(invoice_items.quantity) AS total_quantity")
+    .group(:id)
+    .order("total_quantity")
+    .last
+    # joins(:invoice_items).order("invoice_items.quantity").last
   end
 
   def self.lowest_quantity
-    joins(:invoice_items).order("invoice_items.quantity").first
+    joins(:invoice_items)
+    .select("invoices.id, sum(invoice_items.quantity) AS total_quantity")
+    .group(:id)
+    .order("total_quantity")
+    .first
+    # joins(:invoice_items).order("invoice_items.quantity").first
   end
 end
