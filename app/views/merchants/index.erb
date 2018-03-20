@@ -29,7 +29,10 @@
     </section>
 
     <table>
-      <% all_merchants.each do |merchant| %>
+      <tr>
+        <th>Merchant Name</th>
+      </tr>
+      <% all_merchants.order(:name).each do |merchant| %>
       <tr>
         <td>
           <a class="name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
