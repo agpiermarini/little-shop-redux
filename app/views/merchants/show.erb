@@ -28,5 +28,16 @@
         </form>
       </div>
     </section>
+    <div class="cards">
+      <ul>
+        <% merchant.items.each do |item| %>
+          <li class="card item" >
+            <img src="<%= item.image %>" alt="item photo">
+            <a href="/items/<%= item.id %>"><%= item.title %></a>
+            <h1><%= item.price %></h1>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </body>
 </html>
