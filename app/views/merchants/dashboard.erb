@@ -29,14 +29,14 @@
       </div>
     </section>
     <section class="merchant-analytics">
+      <div id="merchant-analytics">
         <% all_merchants.each do |merchant| %>
-          <div id="merchant-id-<%= merchant.id %>">
           <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
           Item Count: <%= merchant.item_count %>
           Avg Item Price: <%= merchant.average_item_price %>
           Total Cost of Items: <%= merchant.total_item_cost %>
-          </div>
         <% end %>
+      </div>
     </section>
   </body>
 </html>

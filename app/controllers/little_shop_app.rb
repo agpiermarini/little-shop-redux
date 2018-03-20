@@ -9,7 +9,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    # require 'pry' ; binding.pry
     erb :'merchants/index',
         :locals => {
           :all_merchants => Merchant.all
@@ -22,7 +21,6 @@ class LittleShopApp < Sinatra::Base
 
   post '/merchants' do
     Merchant.create(params[:merchant])
-    flash[:success] = "You made a merchant!"
 
     redirect '/merchants'
   end

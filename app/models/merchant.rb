@@ -16,7 +16,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def self.most_items
-    select("COUNT(items.id) AS item_count, merchants.id")
+    select("COUNT(items.id) AS item_count, merchants.id, merchants.name")
     .joins(:items)
     .group("merchants.id")
     .order("item_count DESC")
@@ -24,7 +24,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def self.highest_price_item
-    select("MAX(items.price) AS most_expensive, merchants.id")
+    select("MAX(items.price) AS most_expensive, merchants.id, merchants.name")
     .joins(:items)
     .group(:id)
     .order("most_expensive DESC")
