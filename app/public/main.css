@@ -49,10 +49,33 @@ a.front-page-link {
 }
 
 .header-section {
+  display: flex;
+  flex-direction: column;
   background-image: url("/images/banner-photo.jpeg");
   background-position: center center;
   background-size: cover;
   height: 200px;
+}
+
+.header-section ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-section ul h6 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin: 40px;
+  font-weight: bold
+}
+
+.header-section .buttons-1 {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0% 40%
 }
 
 header {
@@ -65,7 +88,6 @@ header {
 .show-header {
   display: flex;
   flex-direction: column;
-
 }
 
 .show-item {
@@ -141,7 +163,16 @@ section h1 {
 section ul li h1 {
   display: flex;
   justify-content: center;
-  font-size: 40px;
+  font-size: 50px;
+  padding-bottom: 15px;
+  font-weight: bold
+}
+
+section ul li h4 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
   padding-bottom: 15px;
   font-weight: bold
 }
@@ -278,6 +309,7 @@ button.delete-button:hover {
 }
 
 .cards ul li {
+  background-color: LightGrey;
   display: inline-flex;
   flex-direction: column;
   margin: 20px;
@@ -305,11 +337,11 @@ button.delete-button:hover {
 .cards ul li h1 {
   align-self: center;
   padding: 10px;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center
 }
 
-.cards ul li p.card-header{
+.cards ul li p.card-header {
   font-weight: bold;
   text-decoration: underline;
   align-self: center;
@@ -321,7 +353,6 @@ button.delete-button:hover {
   padding-bottom: 10px;
   line-height: auto;
 }
-
 
 .form-box {
   display: flex;
@@ -444,16 +475,86 @@ button.delete-button:hover {
 }
 
 .top-merchants {
+  background-color: LightGrey;
   display: flex;
   justify-content: space-around;
-  align-items: center;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 0px;
   border: solid;
   margin-top: 3%;
 }
 
-#most-items, #highest-price {
-  font-size: 28px;
+#most-items b {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#most-items a {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-bottom: 10ox
+}
+
+#highest-price b {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#highest-price a {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-bottom: 10ox
+}
+
+.item-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px, 60px
+}
+
+.picture a {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 50px;
+  color: black
+}
+
+.picture img {
+  width: 500px;
+  height: auto;
+  padding: 0px 70px
+}
+
+.description h4 {
+  font-size: 30px;
+  text-align: center;
+  padding: 40px 50px;
+  color: black
+}
+
+.description p {
+  font-size: 20px;
+  text-align: center;
+  padding: 30px;
+  color: black;
 }
