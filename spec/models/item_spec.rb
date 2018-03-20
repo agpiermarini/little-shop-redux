@@ -26,7 +26,7 @@ describe 'Validation' do
   end
 
   it 'should be valid if it has all attributes' do
-    item = Item.new(title: 'Things', description: 'Thing #1', price: 5, image: 'Picture of Thing #1')
+    item = Item.new(merchant_id: 1, title: 'Things', description: 'Thing #1', price: 5, image: 'Picture of Thing #1')
 
     expect(item).to be_valid
   end
