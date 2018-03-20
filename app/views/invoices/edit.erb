@@ -19,8 +19,10 @@
       </nav>
     </header>
 
-    <section>
-      <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
+    <section class="header-section">
+      <ul>
+        <li><h2>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h2></li>
+      </ul>
     </section>
 
 
@@ -40,7 +42,7 @@
           <option value="returned"><%= "Returned" %></option>
         </select>
         <section class="buttons">
-          <a class="cancel-button" href="/invoices">Cancel</a>
+          <a href="/invoices">Cancel</a>
           <input type="submit" value="Update Invoice">
         </section>
       </form>
