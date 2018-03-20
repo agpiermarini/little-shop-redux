@@ -3,17 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title><%= item.title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
   </head>
   <body>
-    <%= erb :'partials/nav' %>
     <header>
-      <h1><%= item.title %></h1>
-        <a class="edit-button" href="/items/<%= item.id %>/edit">Edit</a>
-      <form method="post" action="/items/<%= item.id %>">
-        <input type='hidden' name='_method' value='delete'>
-        <button class='delete_item' type='submit' value='delete'>Delete</button>
-      </form>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
     </header>
+    <section>
+      <div class="show-item"><%= item.title %></div>
+      <div class="show-item">
+        <a class="edit-button" href="/items/<%= item.id %>/edit">Edit</a>
+        <form method="post" action="/items/<%= item.id %>">
+          <input type='hidden' name='_method' value='delete'>
+          <button class='delete-button' type='submit' value='delete'>Delete</button>
+        </form>
+      </div>
+    </section>
     <a href="/merchants/<%= item.merchant_id %>"><%= item.merchant.name %></a>
   </body>
 </html>
