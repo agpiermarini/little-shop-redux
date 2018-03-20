@@ -5,7 +5,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/reset.css">
     <link rel="stylesheet" type="text/css" href="/main.css">
-    <title>Items</title>
     <title>Create Item</title>
   </head>
   <body>
@@ -26,23 +25,23 @@
 
   <section class="form-box">
     <form class="create-item" action="/items/new" method="post">
-      <p class="input-label">Merchant</p>
+      <p class="input-label">Merchant:</p>
         <select name="item[merchant_id]" id="Merchant">
           <% all_merchants.each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
         </select>
-      <p class="input-label">Title</p>
+      <p class="input-label">Title:</p>
         <input id="Title" type="text" name="items[title]">
-      <p class="input-label">Description</p>
+      <p class="input-label">Description:</p>
         <input id="Description" type="text" name="items[description]">
-      <p class="input-label">Price</p>
+      <p class="input-label">Price:</p>
         <input id="Price" type="text" name="items[price]">
-      <p class="input-label">Image URL</p>
+      <p class="input-label">Image URL:</p>
         <input id="Image URL" type="text" name="items[image]">
-      <section class="cancel-submit">
+      <section class="buttons">
         <a class="cancel-button" href="/items">Cancel</a>
-        <input type="submit" value="Create Item"/>
+        <input class="create-button" type="submit" value="Create Item"/>
       </section>
     </form>
   </section>
