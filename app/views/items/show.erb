@@ -29,13 +29,13 @@
       </div>
     </section>
     <a href="/merchants/<%= item.merchant_id %>"><%= item.merchant.name %></a>
-    <div class="">
-      <img src="" alt="<%= item.title %> photo">
-    </div>
-    <div id="item-info">
-      <h4><%= item.title %></h4>
-      <p>$<%= item.price %></p>
-      <p><%= item.description %></p>
-    </div>
+    <ul class="cards">
+      <li class="cards"><img src="" alt="<%= item.title %> photo"></li>
+
+      <li class="cards" id="item-info">
+        <h4><%= item.title %></h4>
+        <p>$<%= item.price %></p>
+        <p><%= item.description %></p>
+      </li>
   </body>
 </html>

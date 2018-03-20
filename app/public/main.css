@@ -77,6 +77,11 @@ header {
   padding: 25px 300px 25px 300px;
 }
 
+.show-card-item {
+  display: flex;
+  flex-direction: row;
+}
+
 header h1 a {
   padding: 8px;
   font-size: 20px;
