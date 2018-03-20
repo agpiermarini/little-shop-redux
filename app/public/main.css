@@ -257,3 +257,13 @@ button.delete-button:hover {
   border: solid;
   width: 50%;
 }
+
+.top-merchants {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#most-items, #highest-price {
+  font-size: 28px;
+}
