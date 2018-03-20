@@ -107,9 +107,9 @@ describe 'user visits merchants list page' do
      visit "/merchants/#{merchant1.id}"
      expect(page).to have_content 'Sandals'
      expect(page).to have_content '50'
-     expect(page).to_not have_content 'FlyKnit'
+     expect(page).to have_content 'FlyKnit'
      expect(page).to have_content '100'
-     expect(page).to_not have_content 'Canvas shoes'
+     expect(page).to have_content 'Canvas shoes'
      expect(page).to have_content '150'
     end
   end
