@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= item.title %></title>
+  </head>
+  <body>
+    <%= erb :'partials/nav' %>
+    <header>
+      <h1><%= item.title %></h1>
+        <a class="edit-button" href="/items/<%= item.id %>/edit">Edit</a>
+      <form method="post" action="/items/<%= item.id %>">
+        <input type='hidden' name='_method' value='delete'>
+        <button class='delete_item' type='submit' value='delete'>Delete</button>
+      </form>
+    </header>
+    <a href="/merchants/<%= item.merchant_id %>"><%= item.merchant.name %></a>
+  </body>
+</html>

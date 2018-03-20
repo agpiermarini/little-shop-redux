@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <title>Items</title>
+    <title>Create Item</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <section>
+    <h1>Create New Item</h1>
+  </section>
+
+  <section class="form-box">
+    <form class="create-item" action="/items/new" method="post">
+      <p class="input-label">Merchant</p>
+        <select name="item[merchant_id]" id="Merchant">
+          <% all_merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <% end %>
+        </select>
+      <p class="input-label">Title</p>
+        <input id="Title" type="text" name="items[title]">
+      <p class="input-label">Description</p>
+        <input id="Description" type="text" name="items[description]">
+      <p class="input-label">Price</p>
+        <input id="Price" type="text" name="items[price]">
+      <p class="input-label">Image URL</p>
+        <input id="Image URL" type="text" name="items[image]">
+      <section class="cancel-submit">
+        <a class="cancel-button" href="/items">Cancel</a>
+        <input type="submit" value="Create Item"/>
+      </section>
+    </form>
+  </section>
+</body>
+</html>

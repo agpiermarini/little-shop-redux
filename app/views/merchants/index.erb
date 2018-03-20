@@ -2,40 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Merchants</title>
-    <link rel="stylesheet" href="/main.css">
   </head>
 
   <body>
-    <nav>
-      <a class="little-shop" href="/">LittleShop</a>
-      <a class="right-links" href="/invoices">Invoices</a>
-      <a class="right-links" href="/items">Items</a>
-      <a class="right-links" href="/merchants">Merchants</a>
-    </nav>
-
     <header>
-      <a class="dashboard" href="/merchant/dashboard">Dashboard</a>
-      <h1>Merchants</h1>
-      <a class="create-button" href="/merchants/new">Create a New Merchant</a>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
     </header>
+
+    <section>
+      <a href="/merchant/dashboard">Merchant Dashboard</a>
+      <ul>
+        <li><h1>Merchants</h1></li>
+        <li><a  href="/merchants/new">Create a New Merchant</a></il>
+      </ul>
+    </section>
 
     <table>
       <% all_merchants.each do |merchant| %>
-          <tr>
-            <td>
-              <a class="merchant-name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-              <form class="edit-button"  method="get" action="/merchants/<%= merchant.id %>/edit">
-                <button class="edit-button" type="submit">Edit</button>
-              </form>
-              <form class="delete-button" method="post" action="/merchants/<%= merchant.id %>">
-                <input type="hidden" name="_method" value="delete">
-                <button class="delete-button" type="submit" value="delete">Delete</button>
-              </form>
-            </td>
-          </tr>
-        <% end %>
+      <tr>
+        <td>
+          <a class="name" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+          <a class="edit-button" href="/merchants/<%= merchant.id %>/edit" type="submit">Edit</a>
+          <form method="post" action="/merchants/<%= merchant.id %>">
+            <input type="hidden" name="_method" value="delete">
+            <button class="delete-button" type="submit" value="delete">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% end %>
     </table>
 
   </body>

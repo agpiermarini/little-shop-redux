@@ -5,19 +5,34 @@
     <title>Create New Invoice</title>
   </head>
   <body>
-    <nav>
-      <a class="plain link" href="/">LittleShop</a>
-      <a class="plain link" href="/merchants">Merchants</a>
-      <a class="plain link" href="/items">Items</a>
-      <a class="plain link" href="/invoices">Invoices</a>
-    </nav>
+    <%= erb :'partials/nav' %>>
     <header>
-      <h1>Invoice: <%= invoice.id %> - <%= invoice.status %></h1>
+      <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
+      <h1>Total Charges: $<%= invoice.delimited_total %></h1>
         <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</button>
-      <form method="delete" action="/invoices/<%= invoice.id %>">
-        <button class="delete_invoice" type="submit">Delete</button>
+      <form method="post" action="/invoices/<%= invoice.id %>">
+        <input type='hidden' name='_method' value='delete'>
+        <button class='delete_invoice' type='submit' value='delete'>Delete</button>
       </form>
     </header>
-    <a href="/merchants/<%= invoice.merchant_id %>"><%= merchant.name %></a>
+    <header class="name">
+      <a href="/merchants/<%= invoice.merchant.id %>"><%= invoice.merchant.name %></a>
+    </header>
+    <table>
+      <tr class="table-headers">
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+      </tr>
+      <% invoice.invoice_items.each do |invoice_item| %>
+        <tr>
+          <td><a class="item-id" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
+          <td><%= invoice_item.item.title %></td>
+          <td><%= invoice_item.quantity %></td>
+          <td><%= invoice_item.unit_price %></td>
+        </tr>
+      <% end %>
+    </table>
   </body>
 </html>

@@ -3,21 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Create New Merchant</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
   </head>
   <body>
-    <nav>
-      <a class="plain link" href="/">LittleShop</a>
-      <a class="plain link" href="/merchants">Merchants</a>
-      <a class="plain link" href="/items">Items</a>
-      <a class="plain link" href="/invoices">Invoices</a>
-    </nav>
     <header>
-      <h1><%= merchant.name %></h1>
-        <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</button>
-      <form method='post' action='/merchants/<%= merchant.id %>'>
-        <input type='hidden' name='_method' value='delete'>
-        <button class='delete_merchant' type='submit' value='delete'>Delete</button>
-      </form>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
     </header>
+    <section class="show-header">
+      <div class="show-item"><%= merchant.name %></div>
+      <div class="show-item">
+        <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a>
+        <form method='post' action='/merchants/<%= merchant.id %>'>
+          <input type='hidden' name='_method' value='delete'>
+          <button class='delete-button' type='submit' value='delete'>Delete</button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>
