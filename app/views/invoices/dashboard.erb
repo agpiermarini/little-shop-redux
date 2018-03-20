@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-html>
+<html>
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
     <title>Merchants</title>
   </head>
 
@@ -20,30 +20,34 @@ html>
       </nav>
     </header>
 
-    <header>
+    <section>
       <h1>Invoices Dashboard</h1>
-    </header>
-    <div class="Status Percentages Card ">
-      <p class="Card-Header">Status Percentages</p>
-      <p class="Card-Header-Label">Pending: <%= Invoice.status_percentage(status: "pending") %>%</p>
-      <p class="Card-Header-Label">Shipped: <%= Invoice.status_percentage(status: "shipped") %>%</p>
-      <p class="Card-Header-Label">Returned: <%= Invoice.status_percentage(status: "returned") %>%</p>
-    </div>
+    </section>
+    <div class="cards">
+      <ul>
+        <li class="card item">
+          <p class="card-header">Status Percentages</p>
+          <p class="card-label">Pending: <%= Invoice.status_percentage(status: "pending") %>%</p>
+          <p class="card-label">Shipped: <%= Invoice.status_percentage(status: "shipped") %>%</p>
+          <p class="card-label">Returned: <%= Invoice.status_percentage(status: "returned") %>%</p>
+        </li>
 
-    <div class="Unit Prices Card ">
-      <p class="Card-Header">Unit Prices</p>
-      <p class="Card-Subheader">Highest:</p>
-      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.highest_unit_price.id %>"><%= Invoice.highest_unit_price.id %></a></p>
-      <p class="Card-Subheader">Lowest:</p>
-      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.lowest_unit_price.id %>"><%= Invoice.lowest_unit_price.id %></a></p>
-    </div>
+        <li class="card item">
+          <p class="card-header">Unit Prices</p>
+          <p class="card-label">Invoice with Highest:</p>
+          <p class="card-label"><a href="/invoices/<%= Invoice.highest_unit_price.id %>"><%= Invoice.highest_unit_price.id %></a></p>
+          <p class="card-label">Invoice with Lowest:</p>
+          <p class="card-label"><a href="/invoices/<%= Invoice.lowest_unit_price.id %>"><%= Invoice.lowest_unit_price.id %></a></p>
+        </li>
 
-    <div class="Quantity Card ">
-      <p class="Card-Header">Quantity</p>
-      <p class="Card-Subheader">Highest:</p>
-      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.highest_quantity.id %>"><%= Invoice.highest_quantity.id %></a></p>
-      <p class="Card-Subheader">Lowest:</p>
-      <p class="Card-Header-Label"><a href="/invoices/<%= Invoice.lowest_quantity.id %>"><%= Invoice.lowest_quantity.id %></a></p>
+        <li class="card item">
+          <p class="card-header">Quantity</p>
+          <p class="card-label">Invoice with Highest:</p>
+          <p class="card-label"><a href="/invoices/<%= Invoice.highest_quantity.id %>"><%= Invoice.highest_quantity.id %></a></p>
+          <p class="card-label">Invoice with Lowest:</p>
+          <p class="card-label"><a href="/invoices/<%= Invoice.lowest_quantity.id %>"><%= Invoice.lowest_quantity.id %></a></p>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
