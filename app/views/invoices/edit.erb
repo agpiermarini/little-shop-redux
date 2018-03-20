@@ -2,18 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <title>Edit Invoice</title>
   </head>
   <body>
-    <%= erb :'partials/nav' %>
     <header>
-      <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
     </header>
+
+    <section>
+      <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
+    </section>
+
+
     <section class="form-box">
-      <form class="edit-invoice" action="/invoices/<%= invoice.id %>" method="post">
+      <form class="create-item" action="/invoices/<%= invoice.id %>" method="post">
         <p class="input-label">Merchant</p>
         <select name="update[merchant_id]" id="merchant">
-            <option value="<%= invoice.merchant.id %>" disabled selected><%= invoice.merchant.name %></option>
+          <option value="<%= invoice.merchant.id %>" disabled selected><%= invoice.merchant.name %></option>
           <% all_merchants.order(:name).each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
@@ -24,13 +39,16 @@
           <option value="pending"><%= "Pending" %></option>
           <option value="returned"><%= "Returned" %></option>
         </select>
-        <section class="cancel-submit">
+        <section class="buttons">
           <a class="cancel-button" href="/invoices">Cancel</a>
           <input type="submit" value="Update Invoice">
         </sect|on>
       </form>
     </section>
-    <table>
+
+    <div class=edit-table>
+
+    <table class="edit-table">
       <tr class="table-headers">
         <th>Item ID</th>
         <th>Item Name</th>
@@ -46,5 +64,7 @@
         </tr>
       <% end %>
     </table>
+  </div>
+
   </body>
 </html>

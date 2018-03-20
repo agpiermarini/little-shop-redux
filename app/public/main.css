@@ -259,6 +259,8 @@ button.delete-button:hover {
 
 .buttons {
   display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
   padding: 20px 0px
 }
 
@@ -266,7 +268,7 @@ button.delete-button:hover {
   align-self: flex-start;
   padding: 3.1px;
   background-color: #00cc99;
-  width: 150px;
+  width: 180px;
   height: 22px;
   border: 1px solid #000000;
   box-shadow: 2px 2px;
@@ -274,7 +276,6 @@ button.delete-button:hover {
   text-decoration: none;
   text-align: center;
   font-size: 22px;
-  margin: 0px 350px 0px 10px
 }
 
 .buttons a:hover {
@@ -284,8 +285,7 @@ button.delete-button:hover {
 }
 
 .buttons input {
-  align-self: flex-end;
-  width: 150px;
+  width: 180px;
   background-color: #00cc99;
   border: 1px solid #000000;
   box-shadow: 2px 2px;
@@ -297,4 +297,49 @@ button.delete-button:hover {
   text-decoration: underline;
   cursor: pointer;
   color: black
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-item {
+  align-self: center
+}
+
+.edit-table {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-table th {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  padding: 5px;
+  margin: 0px 40px;
+  font-weight: bold;
+  width: 25%
+}
+
+.edit-table tr {
+  display: flex;
+  padding: 5px;
+  margin: 0px 40px;
+}
+
+.edit-table td {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  padding: 5px;
+  margin: 0px 40px;
+  font-size: 18px;
+  width: 25%;
+  align-items: center
+}
+
+.edit-table tr:nth-child(even) {
+  background-color: #A9A9A9;
 }
