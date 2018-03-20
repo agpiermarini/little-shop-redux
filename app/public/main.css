@@ -262,6 +262,11 @@ button.delete-button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  margin-top: 3%;
 }
 
 #most-items, #highest-price {

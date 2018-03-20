@@ -18,6 +18,9 @@
         </ul>
       </nav>
     </header>
+    <section>
+      <h1>Merchants Dashboard</h1>
+    </section>
     <section class="top-merchants">
       <div id="most-items">
         <b>Merchant With Most Items:</b><br/>
@@ -36,10 +39,10 @@
       <ul>
         <% all_merchants.each do |merchant| %>
           <li id="merchant-analytics" class="card item">
-            <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-            Item Count: <%= merchant.item_count %>
-            Avg Item Price: <%= merchant.average_item_price %>
-            Total Cost of Items: <%= merchant.total_item_cost %>
+            <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a><br />
+            <p class="card-label">Item Count: <%= merchant.item_count %></p>
+            <p class="card-label">Avg Item Price: <%= merchant.average_item_price %></p>
+            <p class="card-label">Total Cost of Items: <%= merchant.total_item_cost %></p>
           </li>
         <% end %>
       </ul>
