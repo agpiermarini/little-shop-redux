@@ -70,9 +70,11 @@ header {
 
 .show-item {
   display: flex;
+  font-size: 40px;
   flex-direction: row;
-  justify-content: center;
-  padding: 25px 50px 75px 100px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 300px 25px 300px;
 }
 
 header h1 a {
