@@ -224,17 +224,19 @@ button.delete-button:hover {
   text-align: center
 }
 
-.cards ul li p.card-label {
-  align-self: center;
-  padding-bottom: 10px;
-}
-
 .cards ul li p.card-header{
   font-weight: bold;
   text-decoration: underline;
   align-self: center;
   padding-bottom: 10px;
 }
+
+.cards ul li p.card-label {
+  align-self: center;
+  padding-bottom: 10px;
+  line-height: auto;
+}
+
 
 .form-box {
   background-color: magenta;
