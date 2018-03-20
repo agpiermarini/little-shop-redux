@@ -152,4 +152,9 @@ class LittleShopApp < Sinatra::Base
   get '/invoices-dashboard' do
     erb :'invoices/dashboard'
   end
+
+  not_found do
+    status '404'
+    erb :'not_found'
+  end
 end
