@@ -2,6 +2,59 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+body.front-page {
+    background: url("/images/background.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+li.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+li.front-page-404 {
+  display: flex;
+  margin: 200px 200px 100px 200px;
+  justify-content: space-around;
+  align-self: center;
+  flex-flow: row nowrap;
+}
+
+a.link-404 {
+  color: white;
+  font-size: 65px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+
+li.front-page-links {
+  display: flex;
+  margin-right: 200px;
+  margin-left: 200px;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+}
+
+a.front-page-link {
+  color: white;
+  font-size: 28px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+section {
+  background-image: url("/images/banner-photo.jpeg");
+  background-position: center center;
+  background-size: cover;
+  height: 200px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
