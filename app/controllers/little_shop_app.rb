@@ -2,6 +2,8 @@ class LittleShopApp < Sinatra::Base
   set :root, File.expand_path('..', __dir__)
   set :method_override, true
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
@@ -47,6 +49,13 @@ class LittleShopApp < Sinatra::Base
     Merchant.destroy(params[:id])
 
     redirect '/merchants'
+  end
+
+  get '/merchants-dashboard' do
+    erb :'merchants/dashboard',
+        :locals => {
+          :all_merchants => Merchant.all
+        }
   end
 
   get '/invoices' do

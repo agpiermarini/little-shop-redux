@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Merchant Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <h1>Merchants Dashboard</h1>
+    </section>
+    <section class="top-merchants">
+      <div id="most-items">
+        <b>Merchant With Most Items:</b><br/>
+          <a href="/merchants/<%= all_merchants.most_items.id %>">
+            <%= all_merchants.most_items.name %>
+          </a>
+      </div>
+      <div id="highest-price">
+        <b>Merchant With Highest Priced Item:</b></br>
+          <a href="/merchants/<%= all_merchants.highest_price_item.id %>">
+            <%= all_merchants.highest_price_item.name %>
+          </a>
+      </div>
+    </section>
+    <section class="cards">
+      <ul>
+        <% all_merchants.each do |merchant| %>
+          <li id="merchant-analytics" class="card item">
+            <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a><br />
+            <p class="card-label">Item Count: <%= merchant.item_count %></p>
+            <p class="card-label">Avg Item Price: <%= merchant.average_item_price %></p>
+            <p class="card-label">Total Cost of Items: <%= merchant.total_item_cost %></p>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </body>
+</html>
