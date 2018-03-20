@@ -2,15 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/reset.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
     <title>Edit Item</title>
   </head>
   <body>
-  <%= erb :'partials/nav' %>
-  <header>
-    <h1>Edit <%= item.title %></h1>
-  </header>
+    <header>
+      <h1><a href="/">Little Shop</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <section class="header-section">
+    <ul>
+      <li><h2>Edit <%= item.title %></h2></li>
+    </ul>
+  </section>
+
   <section class="form-box">
-    <form class="edit-item" action="/items/<%= item.id %>" method="post">
+    <form class="create-item" action="/items/<%= item.id %>" method="post">
       <p class="input-label">Merchant</p>
         <select name="update[merchant_id]" id="Merchant">
           <% all_merchants.each do |merchant| %>
@@ -25,8 +41,8 @@
         <input id="Price" type="text" name="update[price]">
       <p class="input-label">Image URL</p>
         <input id="Image URL" type="text" name="update[image]">
-      <section class="cancel-submit">
-        <a class="cancel-button" href="/invoices">Cancel</a>
+      <section class="buttons">
+        <a href="/invoices">Cancel</a>
         <input type="submit" value="Update Item"/>
       </section>
     </form>
