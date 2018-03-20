@@ -109,7 +109,8 @@ class LittleShopApp < Sinatra::Base
   get '/items/:id' do
     erb :'items/show',
         :locals => {
-          :item => Item.find(params[:id])
+          :item => Item.find(params[:id]),
+          :all_merchants => Merchant.all
         }
   end
 

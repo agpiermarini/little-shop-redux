@@ -26,10 +26,11 @@
   <section class="form-box">
     <form class="create-item" action="/items/new" method="post">
       <p class="input-label">Merchant:</p>
-        <select name="item[merchant_id]" id="Merchant">
+        <select name="items[merchant_id]" id="Merchant">
           <% all_merchants.each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
+
         </select>
       <p class="input-label">Title:</p>
         <input id="Title" type="text" name="items[title]">

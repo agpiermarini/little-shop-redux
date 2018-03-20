@@ -273,6 +273,7 @@ button.delete-button:hover {
 }
 
 .cards ul li {
+  background-color: LightGray;
   display: inline-flex;
   flex-direction: column;
   margin: 20px;
@@ -439,16 +440,43 @@ button.delete-button:hover {
 }
 
 .top-merchants {
+  background-color: LightGray;
   display: flex;
   justify-content: space-around;
-  align-items: center;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 0px;
   border: solid;
   margin-top: 3%;
 }
 
-#most-items, #highest-price {
-  font-size: 28px;
+#most-items b {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#most-items a {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-bottom: 10ox
+}
+
+#highest-price b {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#highest-price a {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-bottom: 10ox
 }
