@@ -10,7 +10,7 @@ describe 'user visits merchants list page' do
   context 'they click on little shop link' do
     it 'they are redirected to /' do
       visit '/merchants'
-      click_link 'Little sShop'
+      click_link 'Little Shop'
 
       expect(current_path).to eq('/')
     end
