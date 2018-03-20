@@ -145,10 +145,6 @@ class LittleShopApp < Sinatra::Base
     erb :'items/dashboard'
   end
 
-  get '/items-dashboard' do
-    erb :'items/dashboard'
-  end
-
   get '/invoices-dashboard' do
     erb :'invoices/dashboard'
   end

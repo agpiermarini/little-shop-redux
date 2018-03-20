@@ -48,7 +48,7 @@ a.front-page-link {
   text-decoration: none;
 }
 
-section {
+.header-section {
   background-image: url("/images/banner-photo.jpeg");
   background-position: center center;
   background-size: cover;
@@ -70,9 +70,11 @@ header {
 
 .show-item {
   display: flex;
+  font-size: 40px;
   flex-direction: row;
-  justify-content: center;
-  padding: 25px 50px 75px 100px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 300px 25px 300px;
 }
 
 header h1 a {
@@ -106,15 +108,17 @@ nav ul li:hover {
 }
 
 section a {
-  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
   text-decoration: none;
-  padding: 8px;
-  font-size: 16px;
-  color: black
+  padding: 10px;
+  font-size: 20px;
+  color: black;
+  font-weight: heavy
 }
 
 section a:hover {
-  color: #00cc99;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -134,6 +138,16 @@ section ul li h1 {
   justify-content: center;
   font-size: 40px;
   padding-bottom: 15px;
+  font-weight: bold
+}
+
+section ul li h2 {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: 40px;
+  padding: 70px;
+  font-weight: bold
 }
 
 section ul li a {
@@ -341,21 +355,21 @@ button.delete-button:hover {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-  padding: 20px 0px
+  padding: 20px 0px;
 }
 
 .buttons a {
-  align-self: flex-start;
   padding: 3.1px;
   background-color: #00cc99;
-  width: 180px;
+  width: 200px;
   height: 22px;
   border: 1px solid #000000;
   box-shadow: 2px 2px;
   color: black;
   text-decoration: none;
-  text-align: center;
   font-size: 22px;
+  text-align: center;
+  justify-content: center
 }
 
 .buttons a:hover {
@@ -365,7 +379,7 @@ button.delete-button:hover {
 }
 
 .buttons input {
-  width: 180px;
+  width: 200px;
   background-color: #00cc99;
   border: 1px solid #000000;
   box-shadow: 2px 2px;

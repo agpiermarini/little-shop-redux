@@ -18,10 +18,10 @@
         </ul>
       </nav>
     </header>
-    <section class="show-header">
+    <section>
       <div class="show-item"><%= merchant.name %></div>
       <div class="show-item">
-        <a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a>
+        <a class=" edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a>
         <form method='post' action='/merchants/<%= merchant.id %>'>
           <input type='hidden' name='_method' value='delete'>
           <button class='delete-button' type='submit' value='delete'>Delete</button>
