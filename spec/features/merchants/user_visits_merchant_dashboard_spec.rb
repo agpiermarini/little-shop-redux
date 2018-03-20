@@ -1,6 +1,6 @@
 describe 'user visits merchant dashboard' do
   context 'they see merchant with most items' do
-    skip 'calculates merchant with most items' do
+    it 'calculates merchant with most items' do
       merchant = Merchant.create(name: 'Crocs')
       merchant = Merchant.create(name: 'Nike')
       merchant = Merchant.create(name: 'Vans')
@@ -27,13 +27,12 @@ describe 'user visits merchant dashboard' do
 
       visit '/merchants-dashboard'
 
-      within(:css, "#most-items")
-      expect(page).to have_content("Vans")
+      expect(page).to have_content("Merchant With Most Items: Vans")
     end
   end
 
   context 'they see merchant with highest item price' do
-    skip  'calculates merchant with highest item price' do
+    it 'calculates merchant with highest item price' do
       merchant = Merchant.create(name: 'Crocs')
       merchant = Merchant.create(name: 'Nike')
       merchant = Merchant.create(name: 'Vans')
@@ -60,8 +59,7 @@ describe 'user visits merchant dashboard' do
 
       visit '/merchants-dashboard'
 
-      within(:css, "#highest-price")
-      expect(page).to have_content("Vans")
+      expect(page).to have_content("Merchant With Highest Priced Item: Vans")
     end
   end
 
@@ -120,7 +118,7 @@ describe 'user visits merchant dashboard' do
       expect(page).to have_content("Avg Item Price: 125")
     end
 
-    skip "shows individual merchant's total cost of items" do
+    it "shows individual merchant's total cost of items" do
       merchant = Merchant.create(name: 'Crocs')
       item1 = Item.create!(title: 'Sandals',
                           description: 'Shoes with holes',
