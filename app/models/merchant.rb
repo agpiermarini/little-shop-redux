@@ -8,6 +8,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def average_item_price
+    return 'N/A' if items.first.nil?
     items.average('price').round(2)
   end
 
