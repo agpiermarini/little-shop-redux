@@ -84,4 +84,33 @@ describe 'user visits merchants list page' do
       expect(page).to_not have_content 'Skechers'
     end
   end
+
+  context 'they see list of Merchant items' do
+    it 'displays grid of item boxes' do
+      merchant1 = Merchant.create(name: 'Skechers')
+      item1 = Item.create!(title: 'Sandals',
+                           description: 'Shoes with holes',
+                           price: 50,
+                           image: 'Picture of shoes with holes',
+                           merchant_id: 1)
+      item2 = Item.create!(title: 'FlyKnit',
+                           description: 'Shoes with knit fabric',
+                           price: 100,
+                           image: 'Picture of shoes with knit fabric',
+                           merchant_id: 1)
+      item3 = Item.create!(title: 'Canvas shoes',
+                           description: 'Low profile shoes made of canvas',
+                           price: 150,
+                           image: 'Picture of low profile shoes made of canvas',
+                           merchant_id: 1)
+
+     visit "/merchants/#{merchant1.id}"
+     expect(page).to have_content 'Sandals'
+     expect(page).to have_content '50'
+     expect(page).to_not have_content 'FlyKnit'
+     expect(page).to have_content '100'
+     expect(page).to_not have_content 'Canvas shoes'
+     expect(page).to have_content '150'
+    end
+  end
 end
