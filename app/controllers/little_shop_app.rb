@@ -2,11 +2,14 @@ class LittleShopApp < Sinatra::Base
   set :root, File.expand_path('..', __dir__)
   set :method_override, true
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   get '/merchants' do
+    # require 'pry' ; binding.pry
     erb :'merchants/index',
         :locals => {
           :all_merchants => Merchant.all
@@ -19,6 +22,7 @@ class LittleShopApp < Sinatra::Base
 
   post '/merchants' do
     Merchant.create(params[:merchant])
+    flash[:success] = "You made a merchant!"
 
     redirect '/merchants'
   end

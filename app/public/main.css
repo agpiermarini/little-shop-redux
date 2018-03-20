@@ -9,6 +9,19 @@ header {
   align-items: center;
 }
 
+.show-header {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.show-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 25px 50px 75px 100px;
+}
+
 header h1 a {
   padding: 8px;
   font-size: 20px;

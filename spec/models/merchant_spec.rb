@@ -127,9 +127,9 @@ describe 'Class Methods' do
 
   describe '.highest_price_item' do
     it 'finds the merchant with the highest priced item' do
-      merchant = Merchant.create(name: 'Crocs')
-      merchant = Merchant.create(name: 'Nike')
-      merchant = Merchant.create(name: 'Vans')
+      merchant1 = Merchant.create(name: 'Crocs')
+      merchant2 = Merchant.create(name: 'Nike')
+      merchant3 = Merchant.create(name: 'Vans')
       item1 = Item.create!(title: 'Sandals',
                           description: 'Shoes with holes',
                           price: 50,
