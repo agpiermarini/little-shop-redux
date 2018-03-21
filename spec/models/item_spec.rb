@@ -47,21 +47,21 @@ end
 describe 'Class Methods' do
   describe '.count' do
     it 'returns total number of items' do
-      Item.create(title: 'Thing',
-                  description: 'Thing #1',
-                  price: 500,
-                  image: 'Picture of Thing #1',
-                  merchant_id: 1)
-      Item.create(title: 'Ring',
-                  description: 'Sparkly',
-                  price: 1000,
-                  image: 'Picture of ring',
-                  merchant_id: 2)
-      Item.create(title: 'Necklace',
-                  description: 'Long',
-                  price: 1500,
-                  image: 'Picture of necklace',
-                  merchant_id: 3)
+      Item.create!(title: 'Thing',
+                   description: 'Thing #1',
+                   price: 500,
+                   image: 'Picture of Thing #1',
+                   merchant_id: 1)
+      Item.create!(title: 'Ring',
+                   description: 'Sparkly',
+                   price: 1000,
+                   image: 'Picture of ring',
+                   merchant_id: 2)
+      Item.create!(title: 'Necklace',
+                   description: 'Long',
+                   price: 1500,
+                   image: 'Picture of necklace',
+                   merchant_id: 3)
 
       expect(Item.count).to eq(3)
     end
@@ -69,21 +69,21 @@ describe 'Class Methods' do
 
   describe '.average(price)' do
     it 'returns average price per item' do
-      Item.create(title: 'Thing',
-                  description: 'Thing #1',
-                  price: 500,
-                  image: 'Picture of Thing #1',
-                  merchant_id: 1)
-      Item.create(title: 'Ring',
-                  description: 'Sparkly',
-                  price: 1000,
-                  image: 'Picture of ring',
-                  merchant_id: 2)
-      Item.create(title: 'Necklace',
-                  description: 'Long',
-                  price: 1500,
-                  image: 'Picture of necklace',
-                  merchant_id: 3)
+      Item.create!(title: 'Thing',
+                   description: 'Thing #1',
+                   price: 500,
+                   image: 'Picture of Thing #1',
+                   merchant_id: 1)
+      Item.create!(title: 'Ring',
+                   description: 'Sparkly',
+                   price: 1000,
+                   image: 'Picture of ring',
+                   merchant_id: 2)
+      Item.create!(title: 'Necklace',
+                   description: 'Long',
+                   price: 1500,
+                   image: 'Picture of necklace',
+                   merchant_id: 3)
 
       expect(Item.average(:price)).to eq(1000)
     end
@@ -91,21 +91,21 @@ describe 'Class Methods' do
 
   describe '.average(price)' do
     it 'returns average price per item' do
-      Item.create(title: 'Thing',
-                  description: 'Thing #1',
-                  price: 500,
-                  image: 'Picture of Thing #1',
-                  merchant_id: 1)
-      Item.create(title: 'Ring',
-                  description: 'Sparkly',
-                  price: 1000,
-                  image: 'Picture of ring',
-                  merchant_id: 2)
-      Item.create(title: 'Necklace',
-                  description: 'Long',
-                  price: 1500,
-                  image: 'Picture of necklace',
-                  merchant_id: 3)
+      Item.create!(title: 'Thing',
+                   description: 'Thing #1',
+                   price: 500,
+                   image: 'Picture of Thing #1',
+                   merchant_id: 1)
+      Item.create!(title: 'Ring',
+                   description: 'Sparkly',
+                   price: 1000,
+                   image: 'Picture of ring',
+                   merchant_id: 2)
+      Item.create!(title: 'Necklace',
+                   description: 'Long',
+                   price: 1500,
+                   image: 'Picture of necklace',
+                   merchant_id: 3)
 
       expect(Item.average(:price)).to eq(1000)
     end
@@ -113,21 +113,21 @@ describe 'Class Methods' do
 
   describe '.newest_item' do
     it 'returns the title of the most recently created item' do
-      Item.create(title: 'Thing',
-                  description: 'Thing #1',
-                  price: 500,
-                  image: 'Picture of Thing #1',
-                  merchant_id: 1)
-      Item.create(title: 'Ring',
-                  description: 'Sparkly',
-                  price: 1000,
-                  image: 'Picture of ring',
-                  merchant_id: 2)
-      Item.create(title: 'Necklace',
-                  description: 'Long',
-                  price: 1500,
-                  image: 'Picture of necklace',
-                  merchant_id: 3)
+      Item.create!(title: 'Thing',
+                   description: 'Thing #1',
+                   price: 500,
+                   image: 'Picture of Thing #1',
+                   merchant_id: 1)
+      Item.create!(title: 'Ring',
+                   description: 'Sparkly',
+                   price: 1000,
+                   image: 'Picture of ring',
+                   merchant_id: 2)
+      Item.create!(title: 'Necklace',
+                   description: 'Long',
+                   price: 1500,
+                   image: 'Picture of necklace',
+                   merchant_id: 3)
 
       expect(Item.newest_item).to eq('Necklace')
     end
@@ -135,21 +135,21 @@ describe 'Class Methods' do
 
   describe '.oldest_item' do
     it 'returns the title of the oldest item' do
-      Item.create(title: 'Thing',
-                  description: 'Thing #1',
-                  price: 500,
-                  image: 'Picture of Thing #1',
-                  merchant_id: 1)
-      Item.create(title: 'Ring',
-                  description: 'Sparkly',
-                  price: 1000,
-                  image: 'Picture of ring',
-                  merchant_id: 2)
-      Item.create(title: 'Necklace',
-                  description: 'Long',
-                  price: 1500,
-                  image: 'Picture of necklace',
-                  merchant_id: 3)
+      Item.create!(title: 'Thing',
+                   description: 'Thing #1',
+                   price: 500,
+                   image: 'Picture of Thing #1',
+                   merchant_id: 1)
+      Item.create!(title: 'Ring',
+                   description: 'Sparkly',
+                   price: 1000,
+                   image: 'Picture of ring',
+                   merchant_id: 2)
+      Item.create!(title: 'Necklace',
+                   description: 'Long',
+                   price: 1500,
+                   image: 'Picture of necklace',
+                   merchant_id: 3)
 
       expect(Item.oldest_item).to eq('Thing')
     end

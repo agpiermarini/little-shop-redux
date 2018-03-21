@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/main.css">
+    <%= erb(:'partials/static_links') %>
     <title>Merchant Dashboard</title>
   </head>
   <body>
-    <header>
-      <h1><a href="/">Little Shop</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/merchants">Merchants</a></li>
-          <li><a href="/items">Items</a></li>
-          <li><a href="/invoices">Invoices</a></li>
-        </ul>
-      </nav>
-    </header>
-
+    <%= erb(:'partials/header') %>
     <section class="header-section">
       <ul>
         <li><h2>Merchants Dashboard</h2></li>
@@ -39,6 +26,7 @@
           </a>
       </div>
     </section>
+
     <div class="cards">
       <ul>
         <% all_merchants.each do |merchant| %>

@@ -1,49 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/main.css">
+    <%= erb(:'partials/static_links') %>
     <title>Create Item</title>
   </head>
   <body>
-    <header>
-      <h1><a href="/">Little Shop</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/merchants">Merchants</a></li>
-          <li><a href="/items">Items</a></li>
-          <li><a href="/invoices">Invoices</a></li>
-        </ul>
-      </nav>
-    </header>
+    <%= erb(:'partials/header') %>
+  <section>
+    <h1>Create New Item</h1>
+  </section>
 
-    <section>
-      <h1>Create New Item</h1>
-    </section>
+  <section class="form-box">
+    <form class="create-item" action="/items/new" method="post">
+      <p class="input-label">Merchant:</p>
+        <select name="items[merchant_id]" id="Merchant">
+          <% all_merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <% end %>
 
-    <section class="form-box">
-      <form class="create-item" action="/items/new" method="post">
-        <p class="input-label">Merchant:</p>
-          <select name="items[merchant_id]" id="Merchant">
-            <% all_merchants.each do |merchant| %>
-              <option value="<%= merchant.id %>"><%= merchant.name %></option>
-            <% end %>
-          </select>
-        <p class="input-label">Title:</p>
-          <input id="Title" type="text" name="items[title]" required>
-        <p class="input-label">Description:</p>
-          <input id="Description" type="text" name="items[description]" required>
-        <p class="input-label">Price:</p>
-          <input id="Price" type="text" name="items[price]" required>
-        <p class="input-label">Image URL:</p>
-          <input id="Image URL" type="text" name="items[image]" required>
-        <section class="buttons">
-          <a class="cancel-button" href="/items">Cancel</a>
-          <input class="create-button" type="submit" value="Create Item"/>
-        </section>
-      </form>
-    </section>
-  </body>
+        </select>
+      <p class="input-label">Title:</p>
+        <input id="Title" type="text" name="items[title]">
+      <p class="input-label">Description:</p>
+        <input id="Description" type="text" name="items[description]">
+      <p class="input-label">Price:</p>
+        <input id="Price" type="text" name="items[price]">
+      <p class="input-label">Image URL:</p>
+        <input id="Image URL" type="text" name="items[image]">
+      <section class="buttons">
+        <a class="cancel-button" href="/items">Cancel</a>
+        <input class="create-button" type="submit" value="Create Item"/>
+      </section>
+    </form>
+  </section>
+</body>
 </html>

@@ -141,7 +141,7 @@ section a {
   padding: 10px;
   font-size: 20px;
   color: black;
-  font-weight: heavy
+  font-weight: bold
 }
 
 section a:hover {
@@ -231,11 +231,6 @@ th {
   width: 100%;
 }
 
-th.invoice-show {
-  text-align: center;
-  padding-left: 0px;
-}
-
 table tr {
   display: flex;
   justify-content: flex-start;
@@ -255,10 +250,6 @@ td {
     align-items: center;
     margin: 2px;
     width: 100%;
-  }
-
-td.invoice-show {
-    text-align: center;
   }
 
 a.name {
@@ -366,7 +357,7 @@ button.delete-button:hover {
 }
 
 .cards ul li {
-  background-color: LightGrey;
+  background-color: LightGray;
   display: inline-flex;
   flex-direction: column;
   margin: 20px;
@@ -496,44 +487,43 @@ button.delete-button:hover {
   align-self: center
 }
 
-.edit-table {
+.invoice-show {
   display: flex;
   justify-content: space-around;
 }
 
-.edit-table th {
+.invoice-show th {
   display: flex;
   flex-direction: row;
-  align-self: flex-start;
   padding: 5px;
-  margin: 0px 40px;
   font-weight: bold;
-  width: 25%
+  width: 25%;
+  justify-content: center;
 }
 
-.edit-table tr {
+.invoice-show tr {
   display: flex;
   padding: 5px;
   margin: 0px 40px;
 }
 
-.edit-table td {
+.invoice-show td {
   display: flex;
   flex-direction: row;
   align-self: center;
   padding: 5px;
-  margin: 0px 40px;
   font-size: 18px;
-  width: 25%;
-  align-items: center
+  width: 200px;
+  align-items: center;
+  text-align: center;
 }
 
-.edit-table tr:nth-child(even) {
+.invoice-show tr:nth-child(even) {
   background-color: #A9A9A9;
 }
 
 .top-merchants {
-  background-color: LightGrey;
+  background-color: LightGray;
   display: flex;
   justify-content: space-around;
   width: 90%;
@@ -620,8 +610,8 @@ button.delete-button:hover {
 button.patch-button {
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 0;
   box-shadow: 2px 2px;
   text-decoration: none;
   background-color: #00cc99;
