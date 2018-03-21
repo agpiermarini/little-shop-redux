@@ -231,11 +231,6 @@ th {
   width: 100%;
 }
 
-th.invoice-show {
-  text-align: center;
-  padding-left: 0px;
-}
-
 table tr {
   display: flex;
   justify-content: flex-start;
@@ -255,10 +250,6 @@ td {
     align-items: center;
     margin: 2px;
     width: 100%;
-  }
-
-td.invoice-show {
-    text-align: center;
   }
 
 a.name {
@@ -496,39 +487,39 @@ button.delete-button:hover {
   align-self: center
 }
 
-.edit-table {
+.invoice-show {
   display: flex;
   justify-content: space-around;
 }
 
-.edit-table th {
+.invoice-show th {
   display: flex;
   flex-direction: row;
-  align-self: flex-start;
   padding: 5px;
   margin: 0px 40px;
   font-weight: bold;
-  width: 25%
+  width: 25%;
+  justify-content: center;
 }
 
-.edit-table tr {
+.invoice-show tr {
   display: flex;
   padding: 5px;
   margin: 0px 40px;
 }
 
-.edit-table td {
+.invoice-show td {
   display: flex;
   flex-direction: row;
   align-self: center;
   padding: 5px;
-  margin: 0px 40px;
   font-size: 18px;
   width: 25%;
-  align-items: center
+  align-items: center;
+  text-align: center;
 }
 
-.edit-table tr:nth-child(even) {
+.invoice-show tr:nth-child(even) {
   background-color: #A9A9A9;
 }
 
