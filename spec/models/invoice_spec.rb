@@ -132,4 +132,38 @@ describe 'Class method' do
       expect(Invoice.lowest_quantity.id).to eq(2)
     end
   end
+
+  describe '.highest_total_charges' do
+    it 'returns invoice with highest total charges' do
+      Invoice.create!(merchant_id: 1, status: 'pending')
+      Invoice.create!(merchant_id: 1, status: 'shipped')
+      Invoice.create!(merchant_id: 1, status: 'pending')
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 20, unit_price: 99)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 3, unit_price: 1000)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 3000, unit_price: 4)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 5, unit_price: 5)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 1, unit_price: 102)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 2, unit_price: 63)
+
+
+
+      expect(Invoice.highest_total_charges.id).to eq(2)
+    end
+  end
+
+  describe '.lowest_total_charges' do
+    it 'returns invoice with lowest total charges' do
+      Invoice.create!(merchant_id: 1, status: 'pending')
+      Invoice.create!(merchant_id: 1, status: 'shipped')
+      Invoice.create!(merchant_id: 1, status: 'pending')
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 2, unit_price: 49)
+      InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 2, unit_price: 400)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 3, unit_price: 400)
+      InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 1, unit_price: 5)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 1, unit_price: 2)
+      InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 1, unit_price: 500)
+
+      expect(Invoice.lowest_total_charges.id).to eq(3)
+    end
+  end
 end

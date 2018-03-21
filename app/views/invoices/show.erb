@@ -19,24 +19,29 @@
       </nav>
     </header>
 
-    <section>
-        <h1>Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1>
-        <h1>Total Charges: $<%= invoice.delimited_total %></h1>
-          <a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</button>
-        <form method="post" action="/invoices/<%= invoice.id %>">
-          <input type='hidden' name='_method' value='delete'>
-          <button class='delete-invoice' type='submit' value='delete'>Delete</button>
-        </form>
+    <section class="header-section">
+      <ul class="invoice-show">
+        <li><h1 class="invoice-show">Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1></li>
+        <li><h1 class="invoice-show">Total Charges: $<%= invoice.delimited_total %></h1></li>
+        <div class="buttons-1">
+          <li><a class="edit-button" href="/invoices/<%= invoice.id %>/edit">Edit</a></li>
+          <li><form method="post" action="/invoices/<%= invoice.id %>">
+            <input type='hidden' name='_method' value='delete'>
+            <button class='delete-button' type='submit' value='delete'>Delete</button>
+          </form></li>
+        </div>
+      </ul>
     </section>
-    <header class="name">
-      <a href="/merchants/<%= invoice.merchant.id %>"><%= invoice.merchant.name %></a>
-    </header>
+
+    <div>
+      <a class="merchant-name" href="/merchants/<%= invoice.merchant.id %>"><%= invoice.merchant.name %></a>
+    </div>
     <table>
-      <tr class="table-headers">
-        <th>Item ID</th>
-        <th>Item Name</th>
-        <th>Quantity</th>
-        <th>Unit Price</th>
+      <tr>
+        <th class="invoice-show">Item ID</th>
+        <th class="invoice-show">Item Name</th>
+        <th class="invoice-show">Quantity</th>
+        <th class="invoice-show">Unit Price</th>
       </tr>
       <% invoice.invoice_items.each do |invoice_item| %>
         <tr>
