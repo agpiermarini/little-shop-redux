@@ -11,9 +11,9 @@
         <li><h6><%= merchant.name %></h6></li>
         <div class="buttons-1">
           <li><a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a></li>
-          <li><form method='post' action='/merchants/<%= merchant.id %>'>
-            <input type='hidden' name='_method' value='delete'>
-            <button class='delete-button' type='submit' value='delete'>Delete</button>
+          <li><form method="post" action="/merchants/<%= merchant.id %>">
+            <input type="hidden" name="_method" value="delete">
+            <button class="delete-button" type="submit" value="delete">Delete</button>
           </form></li>
         </div>
       </ul>

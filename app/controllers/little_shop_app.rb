@@ -1,6 +1,11 @@
+require 'will_paginate'
+require 'will_paginate/active_record'
+
 class LittleShopApp < Sinatra::Base
   set :root, File.expand_path('..', __dir__)
   set :method_override, true
+
+  include WillPaginate::Sinatra::Helpers
 
   enable :sessions
 
@@ -12,6 +17,11 @@ class LittleShopApp < Sinatra::Base
     erb :'merchants/index',
         :locals => {
           :all_merchants => Merchant.all
+                                    .order(:name)
+                                    .paginate(
+                                      :page => params[:page],
+                                      :per_page => 30
+                                    )
         }
   end
 
@@ -54,14 +64,18 @@ class LittleShopApp < Sinatra::Base
   get '/merchants-dashboard' do
     erb :'merchants/dashboard',
         :locals => {
-          :all_merchants => Merchant.all
+          :all_merchants => Merchant.all.order(:name)
         }
   end
 
   get '/invoices' do
     erb :'invoices/index',
         :locals => {
-          :all_invoices => Invoice.all,
+          :all_invoices => Invoice.all
+                                  .paginate(
+                                  :page => params[:page],
+                                  :per_page => 30
+                                )
         }
   end
 
@@ -69,7 +83,7 @@ class LittleShopApp < Sinatra::Base
     erb :'invoices/edit',
         :locals => {
           :invoice => Invoice.find(params[:id]),
-          :all_merchants => Merchant.all
+          :all_merchants => Merchant.all.order(:name)
         }
   end
 
@@ -90,6 +104,11 @@ class LittleShopApp < Sinatra::Base
     erb :'items/index',
         :locals => {
           :all_items => Item.all
+                            .order(:title)
+                            .paginate(
+                              :page => params[:page],
+                              :per_page => 16
+                            )
         }
   end
 
@@ -102,7 +121,7 @@ class LittleShopApp < Sinatra::Base
   get '/items/new' do
     erb :'items/new',
     :locals => {
-      :all_merchants => Merchant.all
+      :all_merchants => Merchant.all.order(:name)
     }
   end
 
@@ -118,7 +137,7 @@ class LittleShopApp < Sinatra::Base
     erb :'items/edit',
         :locals => {
           :item => Item.find(params[:id]),
-          :all_merchants => Merchant.all
+          :all_merchants => Merchant.all.order(:name)
         }
   end
 
