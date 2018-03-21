@@ -45,7 +45,7 @@
       </tr>
       <% invoice.invoice_items.each do |invoice_item| %>
         <tr>
-          <td class="invoice-show"><a class="name" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
+          <td class="invoice-show"><a class="invoice-show" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
           <td class="invoice-show"><%= invoice_item.item.title %></td>
           <td class="invoice-show"><%= invoice_item.quantity %></td>
           <td class="invoice-show"><%= invoice_item.unit_price %></td>
