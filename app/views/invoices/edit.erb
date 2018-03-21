@@ -49,9 +49,9 @@
       </form>
     </section>
 
-    <div class=edit-table>
-      <table class="edit-table">
-        <tr class="table-headers">
+    <div class="invoice-show">
+      <table>
+        <tr>
           <th>Item ID</th>
           <th>Item Name</th>
           <th>Quantity</th>
@@ -59,7 +59,7 @@
         </tr>
         <% invoice.invoice_items.each do |invoice_item| %>
           <tr>
-            <td><a class="item-id" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
+            <td><a class="invoice-show" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
             <td><%= invoice_item.item.title %></td>
             <td><%= invoice_item.quantity %></td>
             <td><%= invoice_item.unit_price %></td>
