@@ -28,10 +28,11 @@
   <section class="form-box">
     <form class="create-item" action="/merchants/<%= merchant.id %>" method="post">
       <p class="input-label">Name</p>
-      <input id="Name" type="text" name="merchant[name]">
+      <input id="Name" type="text" name="update[name]" required>
       <section class="buttons">
         <a href="/merchants">Cancel</a>
-        <input type="submit" value="Update Merchant">
+        <input type="hidden" name="_method" value="patch">
+          <button class="patch-button" type="submit" value="patch">Update Merchant</button>
       </section>
     </form>
   </section>

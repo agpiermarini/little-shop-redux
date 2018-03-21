@@ -29,21 +29,22 @@
     <form class="create-item" action="/items/<%= item.id %>" method="post">
       <p class="input-label">Merchant</p>
         <select name="update[merchant_id]" id="Merchant">
-          <% all_merchants.each do |merchant| %>
+          <% all_merchants.order(:name).each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
         </select>
       <p class="input-label">Title</p>
-        <input id="Title" type="text" name="update[title]">
+        <input id="Title" type="text" name="update[title]" required>
       <p class="input-label">Description</p>
-        <input id="Description" type="text" name="update[description]">
+        <input id="Description" type="text" name="update[description]" required>
       <p class="input-label">Price</p>
-        <input id="Price" type="text" name="update[price]">
+        <input id="Price" type="text" name="update[price]" required>
       <p class="input-label">Image URL</p>
-        <input id="Image URL" type="text" name="update[image]">
-      <section class="buttons">
-        <a href="/invoices">Cancel</a>
-        <input type="submit" value="Update Item"/>
+        <input id="Image URL" type="text" name="update[image]" required>
+      <section class="cancel-submit">
+        <a class="cancel-button" href="/invoices">Cancel</a>
+        <input type="hidden" name="_method" value="patch">
+          <button class="patch-button" type="submit" value="patch">Update Item</button>
       </section>
     </form>
   </section>

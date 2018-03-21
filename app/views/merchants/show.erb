@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Create New Merchant</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/reset.css">
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <title><%= merchant.name %></title>
   </head>
   <body>
     <header>
@@ -18,15 +18,30 @@
         </ul>
       </nav>
     </header>
-    <section>
-      <div class="show-item"><%= merchant.name %></div>
-      <div class="show-item">
-        <a class=" edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a>
-        <form method='post' action='/merchants/<%= merchant.id %>'>
-          <input type='hidden' name='_method' value='delete'>
-          <button class='delete-button' type='submit' value='delete'>Delete</button>
-        </form>
-      </div>
+
+    <section class="header-section">
+      <ul>
+        <li><h6><%= merchant.name %></h6></li>
+        <div class="buttons-1">
+          <li><a class="edit-button" href="/merchants/<%= merchant.id %>/edit">Edit</a></li>
+          <li><form method='post' action='/merchants/<%= merchant.id %>'>
+            <input type='hidden' name='_method' value='delete'>
+            <button class='delete-button' type='submit' value='delete'>Delete</button>
+          </form></li>
+        </div>
+      </ul>
     </section>
+
+    <div class="cards">
+      <ul>
+        <% merchant.items.each do |item| %>
+          <li class="card item" >
+            <img src="<%= item.image %>" alt="item photo">
+            <a href="/items/<%= item.id %>"><%= item.title %></a>
+            <h1>$<%= item.price %></h1>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </body>
 </html>

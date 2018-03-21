@@ -10,6 +10,7 @@ describe 'user visits create new item page' do
       fill_in 'Description', :with => 'Thing #1'
       fill_in 'Price', :with => 500
       fill_in 'Image URL', :with => 'Picture of Thing #1'
+
       click_button 'Create Item'
 
       expect(current_path).to eq('/items')

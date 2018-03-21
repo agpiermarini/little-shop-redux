@@ -49,10 +49,33 @@ a.front-page-link {
 }
 
 .header-section {
+  display: flex;
+  flex-direction: column;
   background-image: url("/images/banner-photo.jpeg");
   background-position: center center;
   background-size: cover;
   height: 200px;
+}
+
+.header-section ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-section ul h6 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin: 40px;
+  font-weight: bold
+}
+
+.header-section .buttons-1 {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0% 40%
 }
 
 header {
@@ -65,7 +88,6 @@ header {
 .show-header {
   display: flex;
   flex-direction: column;
-
 }
 
 .show-item {
@@ -75,6 +97,11 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: 25px 300px 25px 300px;
+}
+
+.show-card-item {
+  display: flex;
+  flex-direction: row;
 }
 
 header h1 a {
@@ -136,7 +163,23 @@ section h1 {
 section ul li h1 {
   display: flex;
   justify-content: center;
+  font-size: 50px;
+  padding-bottom: 15px;
+  font-weight: bold
+}
+
+section ul li h1.invoice-show {
+  display: flex;
+  justify-content: center;
   font-size: 40px;
+  font-weight: bold
+}
+
+section ul li h4 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
   padding-bottom: 15px;
   font-weight: bold
 }
@@ -176,31 +219,77 @@ table {
   display: flex;
   justify-content: center;
   border-collapse: separate;
-  border-spacing: 8px;
   margin: 30px 0;
-  font-size: 20px
+  font-size: 20px;
+  table-layout:auto;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+  padding-left: 10px;
+  width: 100%;
+}
+
+th.invoice-show {
+  text-align: center;
+  padding-left: 0px;
 }
 
 table tr {
-  border: solid
+  display: flex;
+  justify-content: flex-start;
+  border: solid;
+  border-width: 1px;
 }
 
-table tr:nth-child(even) td{
+
+table tr:nth-child(even) {
   background-color: #A9A9A9;
 }
 
+
 td {
-  display: flex;
-  justify-content: space-between;
-  margin: 2px
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    width: 100%;
+  }
+
+td.invoice-show {
+    text-align: center;
+  }
 
 a.name {
-  width: 1000px;
+  width: 300px;
   padding: 0px 10px;
   color: black;
   text-decoration: none;
   align-self: center;
+}
+
+a.invoice-show {
+  padding: 0px 10px;
+  color: black;
+  text-decoration: none;
+  align-self: center;
+  width: auto;
+}
+
+div a.merchant-name {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  color: black;
+  padding-top: 40px;
+  font-size: 40px;
+}
+
+div a.merchant-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 a.name:hover {
@@ -209,10 +298,12 @@ a.name:hover {
 }
 
 a.edit-button {
+  align-content: center;
   align-self: center;
   padding: 3.1px;
   background-color: #00cc99;
-  width: 40px;
+  height: 20px;
+  width: 72px;
   border: 1px solid #000000;
   box-shadow: 2px 2px;
   color: black;
@@ -242,6 +333,8 @@ button.edit-button:hover {
 }
 
 button.delete-button {
+  align-self: center;
+  text-align: center;
   background-color: #00cc99;
   width: 100%;
   border: 1px solid #000000;
@@ -301,11 +394,11 @@ button.delete-button:hover {
 .cards ul li h1 {
   align-self: center;
   padding: 10px;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center
 }
 
-.cards ul li p.card-header{
+.cards ul li p.card-header {
   font-weight: bold;
   text-decoration: underline;
   align-self: center;
@@ -314,10 +407,10 @@ button.delete-button:hover {
 
 .cards ul li p.card-label {
   align-self: center;
+  text-align: center;
   padding-bottom: 10px;
   line-height: auto;
 }
-
 
 .form-box {
   display: flex;
@@ -479,4 +572,72 @@ button.delete-button:hover {
   justify-content: center;
   font-size: 18px;
   padding-bottom: 10ox
+}
+
+.item-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px, 60px
+}
+
+.picture a {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px 50px;
+  color: black
+}
+
+.picture img {
+  width: 500px;
+  height: auto;
+  padding: 0px 70px
+}
+
+.description h4 {
+  font-size: 30px;
+  text-align: center;
+  padding: 40px 50px;
+  color: black
+}
+
+.description p {
+  font-size: 20px;
+  text-align: center;
+  padding: 30px;
+  color: black;
+}
+
+button.patch-button {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 2px;
+  text-decoration: none;
+  background-color: #00cc99;
+  color: black;
+  width: 208px;
+  height: 30px;
+  padding: 3px 3px;
+  text-align: center;
+  font-size: 20px;
+  border: solid;
+  border-width: 1px;
+  font-family: "Raleway", sans-serif;
+}
+
+button.patch-button:hover {
+  background-color: #ffd633;
+  cursor: pointer;
+  color: black
 }
