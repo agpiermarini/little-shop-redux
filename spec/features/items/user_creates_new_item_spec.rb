@@ -20,7 +20,7 @@ describe 'user visits create new item page' do
 
   context 'they do not fill in a form field' do
     skip 'they recieve a flash error' do
-      Merchant.create!(name: 'Ussss')
+      Merchant.create(name: 'Ussss')
       visit '/items/new'
       click_button 'Create Item'
 
@@ -30,8 +30,8 @@ describe 'user visits create new item page' do
 
   context 'they try to submit a blank space as a form field' do
     skip 'they recieve a flash error' do
-      Merchant.create!(name: 'Ussss')
-      visit '/items/new'
+      Merchant.create(name: 'Ussss')
+      visit "/items/new"
       fill_in 'Title', :with => ' '
       click_button 'Create New Item'
 

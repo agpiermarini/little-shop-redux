@@ -1,12 +1,12 @@
 describe 'user clicks around individual item page' do
   context 'they click on delete item button' do
     it 'they delete an item' do
-      item = Item.create!(title: 'Things',
-                          description: 'Thing #1',
-                          price: 5,
-                          image: 'Picture of Thing #1',
-                          merchant_id: 1)
-      Merchant.create!(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
       click_button 'Delete'
 
@@ -17,12 +17,12 @@ describe 'user clicks around individual item page' do
 
   context 'they click on edit item button' do
     it 'they are redirected to /item/:id/edit' do
-      item = Item.create!(title: 'Things',
-                          description: 'Thing #1',
-                          price: 5,
-                          image: 'Picture of Thing #1',
-                          merchant_id: 1)
-      Merchant.create!(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
       click_link 'Edit'
 
@@ -32,12 +32,12 @@ describe 'user clicks around individual item page' do
 
   context 'they click on merchant title link' do
     it 'they are redirected to /merchant/:id/' do
-      item = Item.create!(title: 'Things',
-                          description: 'Thing #1',
-                          price: 5,
-                          image: 'Picture of Thing #1',
-                          merchant_id: 1)
-      merchant = Merchant.create!(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
       click_link 'Youuuuuu'
 
@@ -49,12 +49,12 @@ end
 describe 'user sees expected content' do
   context 'they see a header at the top' do
     it 'they see item title' do
-      item = Item.create!(title: 'Things',
-                          description: 'Thing #1',
-                          price: 5,
-                          image: 'Picture of Thing #1',
-                          merchant_id: 1)
-      Merchant.create!(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
 
       expect(page).to have_content 'Things'
@@ -63,12 +63,12 @@ describe 'user sees expected content' do
 
   context 'they see price in the body' do
     it 'they see item price' do
-      item = Item.create!(title: 'Things',
-                          description: 'Thing #1',
-                          price: 5,
-                          image: 'Picture of Thing #1',
-                          merchant_id: 1)
-      Merchant.create(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
 
       expect(page).to have_content '$5'
@@ -77,15 +77,15 @@ describe 'user sees expected content' do
 
   context 'they see more item info in the body' do
     it 'they see item description' do
-      item = Item.create!(title: 'Things',
-                          description: 'Thing #1',
-                          price: 5,
-                          image: 'Picture of Thing #1',
-                          merchant_id: 1)
-      Merchant.create!(name: 'Youuuuuu')
+      item = Item.create(title: 'Things',
+                         description: 'Thing #1',
+                         price: 5,
+                         image: 'Picture of Thing #1',
+                         merchant_id: 1)
+      merchant = Merchant.create(name: 'Youuuuuu')
       visit "/items/#{item.id}"
 
-      expect(page).to have_content 'Thing #1'
+      expect(page).to have_content "Thing #1"
     end
   end
 end

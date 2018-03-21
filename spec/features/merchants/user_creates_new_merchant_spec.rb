@@ -12,7 +12,7 @@ describe 'user visits create new merchant page' do
 
   context 'they do not fill in a name' do
     skip 'they recieve a flash error' do
-      Merchant.create!(name: 'Ussss')
+      Merchant.create(name: 'Ussss')
       visit '/merchants/new'
       click_button 'Create Merchant'
 
@@ -22,8 +22,8 @@ describe 'user visits create new merchant page' do
 
   context 'they try to submit a blank space as a name' do
     skip 'they recieve a flash error' do
-      Merchant.create!(name: 'Ussss')
-      visit '/merchants/new'
+      Merchant.create(name: 'Ussss')
+      visit "/merchants/new"
       fill_in 'Name', :with => ' '
       click_button 'Create Merchant'
 

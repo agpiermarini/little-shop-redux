@@ -1,9 +1,9 @@
 describe 'user edits invoice merchant and status' do
   describe 'and they are redirected to invoice page' do
     it 'and invoice merchant and status reflect new information' do
-      invoice = Invoice.create!(merchant_id: 123, status: 'pending')
-      Merchant.create!(id: 123, name: 'Boaty McBoatface')
-      Merchant.create!(id: 234, name: 'Test')
+      invoice = Invoice.create(merchant_id: 123, status: 'pending')
+      merchant1 = Merchant.create(id: 123, name: 'Boaty McBoatface')
+      merchant2 = Merchant.create(id: 234, name: 'Test')
       visit "/invoices/#{invoice.id}/edit"
 
       select 'Test', :from => "merchant"
