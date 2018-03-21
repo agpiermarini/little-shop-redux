@@ -3,11 +3,26 @@ describe 'user visits invoices dashboard page' do
     Invoice.create!(merchant_id: 1, status: 'pending')
     Invoice.create!(merchant_id: 1, status: 'shipped')
     Invoice.create!(merchant_id: 1, status: 'pending')
-    InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 99)
-    InvoiceItem.create!(item_id: 1, invoice_id: 1, quantity: 1, unit_price: 1)
-    InvoiceItem.create!(item_id: 1, invoice_id: 2, quantity: 5, unit_price: 5)
-    InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 5, unit_price: 500)
-    InvoiceItem.create!(item_id: 1, invoice_id: 3, quantity: 5, unit_price: 1)
+    InvoiceItem.create!(item_id: 1,
+                        invoice_id: 1,
+                        quantity: 1,
+                        unit_price: 99)
+    InvoiceItem.create!(item_id: 1,
+                        invoice_id: 1,
+                        quantity: 1,
+                        unit_price: 1)
+    InvoiceItem.create!(item_id: 1,
+                        invoice_id: 2,
+                        quantity: 5,
+                        unit_price: 5)
+    InvoiceItem.create!(item_id: 1,
+                        invoice_id: 3,
+                        quantity: 5,
+                        unit_price: 500)
+    InvoiceItem.create!(item_id: 1,
+                        invoice_id: 3,
+                        quantity: 5,
+                        unit_price: 1)
     visit '/invoices-dashboard'
 
     expect(page).to have_content 'Invoices Dashboard'
