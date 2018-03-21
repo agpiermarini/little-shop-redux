@@ -19,7 +19,7 @@ describe 'user visits edit item page' do
 
       expect(current_path).to eq("/items/#{item.id}")
       visit "/items/#{item.id}"
-      expect(page).to have_content 'Him'
+      expect(page).to have_content "Him"
     end
   end
 end
