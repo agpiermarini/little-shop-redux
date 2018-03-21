@@ -4,6 +4,8 @@ require './app/models/item'
 require './app/models/invoice'
 require './app/models/invoice_item'
 
+ActiveRecord::Base.connection.reset_pk_sequence!(:table_name)
+
 CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |row|
   Merchant.create!(id:   row[:id],
                   name: row[:name],
