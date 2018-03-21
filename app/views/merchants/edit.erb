@@ -15,7 +15,7 @@
   <section class="form-box">
     <form class="create-item" action="/merchants/<%= merchant.id %>" method="post">
       <p class="input-label">Name</p>
-      <input id="Name" type="text" name="update[name]" value="<%= merchant.name %>" required>
+      <input id="Name" type="text" name="update[name]" placeholder="<%= merchant.name %>" required>
       <section class="buttons">
         <a href="/merchants">Cancel</a>
         <input type="hidden" name="_method" value="patch">
