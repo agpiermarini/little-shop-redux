@@ -610,8 +610,8 @@ button.delete-button:hover {
 button.patch-button {
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 0;
   box-shadow: 2px 2px;
   text-decoration: none;
   background-color: #00cc99;
