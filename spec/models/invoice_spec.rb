@@ -1,9 +1,9 @@
 describe 'Validation' do
   it 'should be invalid to not have a merchant id and status' do
-    invoice1 = Invoice.create
-    invoice2 = Invoice.create(merchant_id: 1)
-    invoice3 = Invoice.create(status: 'pending')
-    invoice4 = Invoice.create(merchant_id: 1, status: 'pending')
+    invoice1 = Invoice.new
+    invoice2 = Invoice.new(merchant_id: 1)
+    invoice3 = Invoice.new(status: 'pending')
+    invoice4 = Invoice.new(merchant_id: 1, status: 'pending')
 
 
     expect(invoice1).to_not be_valid
