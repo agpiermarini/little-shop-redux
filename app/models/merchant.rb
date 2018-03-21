@@ -3,6 +3,8 @@ class Merchant < ActiveRecord::Base
   has_many :items
   validates :name, presence: true
 
+  include WillPaginate::Sinatra::Helpers
+
   def item_count
     items.count
   end

@@ -28,6 +28,10 @@
       </ul>
     </section>
 
+    <div class="pagination">
+      <%= will_paginate(all_items) %>
+    </div>
+
     <div class="cards">
       <ul>
         <% all_items.each do |item| %>
@@ -38,6 +42,10 @@
           </li>
         <% end %>
       </ul>
+    </div>
+
+    <div class="pagination">
+      <%= will_paginate(all_items) %>
     </div>
 
   </body>

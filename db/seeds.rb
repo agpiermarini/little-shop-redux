@@ -16,7 +16,7 @@ CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |r
               title:       row[:name],
               description: row[:description],
               price:       row[:unit_price],
-              image:       'https://farm9.staticflickr.com/8745/17257013096_3062f69755_m.jpg',
+              image:       'http://commuterbenefits.com/wp-content/plugins/ajax-search-lite/img/default.jpg',
               merchant_id: row[:merchant_id],
               created_at:  row[:created_at],
               updated_at:  row[:updated_at])

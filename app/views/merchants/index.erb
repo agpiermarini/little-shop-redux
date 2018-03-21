@@ -28,6 +28,10 @@
       </ul>
     </section>
 
+    <div class="pagination">
+      <%= will_paginate(all_merchants) %>
+    </div>
+
     <table>
       <tr>
         <th>Merchant Name</th>
@@ -45,6 +49,10 @@
       </tr>
       <% end %>
     </table>
+
+    <div class="pagination">
+      <%= will_paginate(all_merchants) %>
+    </div>
 
   </body>
 </html>
