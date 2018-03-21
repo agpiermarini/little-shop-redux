@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/main.css">
+    <%= erb(:'partials/static_links') %>
     <title>Invoice <%= invoice.id %></title>
   </head>
   <body>
-    <header>
-      <h1><a href="/">Little Shop</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/merchants">Merchants</a></li>
-          <li><a href="/items">Items</a></li>
-          <li><a href="/invoices">Invoices</a></li>
-        </ul>
-      </nav>
-    </header>
-
+    <%= erb(:'partials/header') %>
     <section class="header-section">
       <ul class="invoice-show">
         <li><h1 class="invoice-show">Invoice: <%= invoice.id %> - <%= invoice.status.capitalize %></h1></li>
@@ -36,21 +23,23 @@
     <div>
       <a class="merchant-name" href="/merchants/<%= invoice.merchant.id %>"><%= invoice.merchant.name %></a>
     </div>
-    <table>
-      <tr>
-        <th class="invoice-show">Item ID</th>
-        <th class="invoice-show">Item Name</th>
-        <th class="invoice-show">Quantity</th>
-        <th class="invoice-show">Unit Price</th>
-      </tr>
-      <% invoice.invoice_items.each do |invoice_item| %>
+    <div class="invoice-show">
+      <table>
         <tr>
-          <td class="invoice-show"><a class="invoice-show" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
-          <td class="invoice-show"><%= invoice_item.item.title %></td>
-          <td class="invoice-show"><%= invoice_item.quantity %></td>
-          <td class="invoice-show"><%= invoice_item.unit_price %></td>
+          <th >Item ID</th>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
         </tr>
-      <% end %>
-    </table>
+        <% invoice.invoice_items.each do |invoice_item| %>
+          <tr>
+            <td><a class="invoice-show" href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></td>
+            <td><%= invoice_item.item.title %></td>
+            <td><%= invoice_item.quantity %></td>
+            <td><%= invoice_item.unit_price %></td>
+          </tr>
+        <% end %>
+      </table>
+  </div>
   </body>
 </html>

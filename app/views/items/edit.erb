@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/main.css">
+    <%= erb(:'partials/static_links') %>
     <title>Edit Item</title>
   </head>
   <body>
-    <header>
-      <h1><a href="/">Little Shop</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/merchants">Merchants</a></li>
-          <li><a href="/items">Items</a></li>
-          <li><a href="/invoices">Invoices</a></li>
-        </ul>
-      </nav>
-    </header>
-
+    <%= erb(:'partials/header') %>
   <section class="header-section">
     <ul>
       <li><h2>Edit <%= item.title %></h2></li>
@@ -41,8 +28,8 @@
         <input id="Price" type="text" name="update[price]" required>
       <p class="input-label">Image URL</p>
         <input id="Image URL" type="text" name="update[image]" required>
-      <section class="cancel-submit">
-        <a class="cancel-button" href="/invoices">Cancel</a>
+      <section class="buttons">
+        <a href="/invoices">Cancel</a>
         <input type="hidden" name="_method" value="patch">
           <button class="patch-button" type="submit" value="patch">Update Item</button>
       </section>
