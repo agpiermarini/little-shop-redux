@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="/reset.css">
     <link rel="stylesheet" type="text/css" href="/main.css">
     <title>Items</title>
@@ -34,7 +34,7 @@
           <li class="card item" >
             <img src="<%= item.image %>" alt="item photo">
             <a href="/items/<%= item.id %>"><%= item.title %></a>
-            <h1><%= item.price %></h1>
+            <h1>$<%= item.price %></h1>
           </li>
         <% end %>
       </ul>

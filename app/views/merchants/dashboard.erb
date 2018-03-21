@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="/reset.css">
     <link rel="stylesheet" type="text/css" href="/main.css">
     <title>Merchant Dashboard</title>
@@ -45,8 +45,8 @@
           <li id="merchant-analytics" class="card item">
             <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a><br />
             <p class="card-label">Item Count: <%= merchant.item_count %></p>
-            <p class="card-label">Avg Item Price: <%= merchant.average_item_price %></p>
-            <p class="card-label">Total Cost of Items: <%= merchant.total_item_cost %></p>
+            <p class="card-label">Avg Item Price: $<%= merchant.average_item_price %></p>
+            <p class="card-label">Total Cost of Items: $<%= merchant.total_item_cost %></p>
           </li>
         <% end %>
       </ul>
