@@ -260,7 +260,7 @@ a.edit-button {
   align-self: center;
   padding: 3.1px;
   background-color: #00cc99;
-  height: 18px;
+  height: 20px;
   width: 72px;
   border: 1px solid #000000;
   box-shadow: 2px 2px;
@@ -572,4 +572,29 @@ button.delete-button:hover {
   text-align: center;
   padding: 30px;
   color: black;
+}
+
+button.patch-button {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 2px;
+  text-decoration: none;
+  background-color: #00cc99;
+  color: black;
+  width: 208px;
+  height: 30px;
+  padding: 3px 3px;
+  text-align: center;
+  font-size: 20px;
+  border: solid;
+  border-width: 1px;
+  font-family: "Raleway", sans-serif;
+}
+
+button.patch-button:hover {
+  background-color: #ffd633;
+  cursor: pointer;
+  color: black
 }
