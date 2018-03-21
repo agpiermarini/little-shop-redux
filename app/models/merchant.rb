@@ -33,4 +33,12 @@ class Merchant < ActiveRecord::Base
     .order("most_expensive DESC")
     .first
   end
+
+  def index
+    @merchants = Merchant.paginate(page: params[:page], per_page: 30)
+    respond_to do |format|
+      format.html
+      format.json { render json: @merchants }
+    end
+  end
 end

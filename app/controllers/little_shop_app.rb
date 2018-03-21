@@ -1,3 +1,6 @@
+require 'will_paginate'
+require 'will_paginate/active_record'
+
 class LittleShopApp < Sinatra::Base
   set :root, File.expand_path('..', __dir__)
   set :method_override, true
