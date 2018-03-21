@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/main.css">
+    <%= erb(:'partials/static_links') %>
     <title>Create Item</title>
   </head>
   <body>
-    <header>
-      <h1><a href="/">Little Shop</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/merchants">Merchants</a></li>
-          <li><a href="/items">Items</a></li>
-          <li><a href="/invoices">Invoices</a></li>
-        </ul>
-      </nav>
-    </header>
+    <%= erb(:'partials/header') %>
 
   <section>
     <h1>Create New Item</h1>
