@@ -6,9 +6,11 @@
   </head>
   <body>
     <%= erb(:'partials/header') %>
-  <section>
-    <h1>Create New Item</h1>
-  </section>
+    <section class="header-section">
+      <ul>
+        <li><h2>Create a New Item</h2></li>
+      </ul>
+    </section>
 
   <section class="form-box">
     <form class="create-item" action="/items/new" method="post">
